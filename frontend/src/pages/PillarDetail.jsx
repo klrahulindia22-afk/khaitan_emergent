@@ -25,11 +25,11 @@ export default function PillarDetail() {
       {/* Hero */}
       <section
         ref={ref}
-        className="relative pt-24 lg:pt-14 px-6 md:px-10 lg:px-14 pb-16 md:pb-24 overflow-hidden"
+        className="relative pt-28 md:pt-32 lg:pt-36 px-6 md:px-10 lg:px-14 pb-16 md:pb-24 overflow-hidden"
       >
         <Link
           to="/#pillars"
-          className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-slate-brand hover:text-ink transition-colors mt-10 md:mt-16"
+          className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-slate-brand hover:text-ink transition-colors"
           data-testid="pillar-back-link"
         >
           <ArrowLeft className="w-3.5 h-3.5" />

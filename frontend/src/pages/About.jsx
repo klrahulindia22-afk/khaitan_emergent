@@ -38,12 +38,12 @@ export default function About() {
   return (
     <main className="relative" data-testid="about-page">
       {/* Hero */}
-      <section className="relative pt-24 lg:pt-14 px-6 md:px-10 lg:px-14 pb-16 md:pb-24">
+      <section className="relative pt-28 md:pt-32 lg:pt-36 px-6 md:px-10 lg:px-14 pb-16 md:pb-24">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-[10px] font-mono uppercase tracking-[0.24em] text-slate-brand mb-6 mt-10 md:mt-16"
+          className="text-[10px] font-mono uppercase tracking-[0.24em] text-slate-brand mb-6"
         >
           About — The company behind the system
         </motion.div>

@@ -31,7 +31,7 @@ export const Hero = () => {
     <section
       ref={ref}
       id="top"
-      className="relative min-h-[100svh] pt-24 lg:pt-14 px-6 md:px-10 lg:px-14 pb-24 overflow-hidden"
+      className="relative min-h-[100svh] pt-28 md:pt-32 lg:pt-36 px-6 md:px-10 lg:px-14 pb-24 overflow-hidden"
       data-testid="hero-section"
     >
       {/* Ambient rotating asterisk parallax */}

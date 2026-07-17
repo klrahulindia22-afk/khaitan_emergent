@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
-const nav = [
-  { label: "Index", to: "/", section: "top" },
-  { label: "The Problem", to: "/#problem", section: "problem" },
-  { label: "Promoter Reality", to: "/#promoter", section: "promoter" },
-  { label: "Compliance Gap", to: "/#compliance", section: "compliance" },
-  { label: "Why EduOps", to: "/#differentiator", section: "differentiator" },
-  { label: "7 Pillars", to: "/#pillars", section: "pillars" },
+const manifesto = [
+  { label: "Problem", section: "problem" },
+  { label: "Promoter", section: "promoter" },
+  { label: "Compliance", section: "compliance" },
+  { label: "Why EduOps", section: "differentiator" },
+  { label: "7 Pillars", section: "pillars" },
 ];
 
-const secondary = [
-  { label: "About Us", to: "/about" },
+const pages = [
+  { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -21,7 +20,7 @@ const scrollTo = (id) => {
   const el = document.getElementById(id);
   if (!el) return;
   if (window.__lenis) {
-    window.__lenis.scrollTo(el, { offset: -20, duration: 1.4 });
+    window.__lenis.scrollTo(el, { offset: -80, duration: 1.4 });
   } else {
     el.scrollIntoView({ behavior: "smooth" });
   }
@@ -31,6 +30,12 @@ export const Sidebar = () => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("top");
+  const [condensed, setCondensed] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (v) => {
+    setCondensed(v > 40);
+  });
 
   useEffect(() => {
     setOpen(false);
@@ -49,7 +54,7 @@ export const Sidebar = () => {
             if (e.isIntersecting) setActive(id);
           });
         },
-        { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+        { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
       );
       obs.observe(el);
       observers.push(obs);
@@ -58,223 +63,245 @@ export const Sidebar = () => {
   }, [location.pathname]);
 
   const handleNav = (item, e) => {
-    if (item.section && location.pathname === "/") {
+    if (location.pathname === "/") {
       e.preventDefault();
-      if (item.section === "top") {
-        window.__lenis
-          ? window.__lenis.scrollTo(0, { duration: 1.4 })
-          : window.scrollTo({ top: 0, behavior: "smooth" });
-      } else {
-        scrollTo(item.section);
-      }
+      scrollTo(item.section);
       setOpen(false);
+    }
+  };
+
+  const goHome = (e) => {
+    if (location.pathname === "/") {
+      e.preventDefault();
+      window.__lenis
+        ? window.__lenis.scrollTo(0, { duration: 1.4 })
+        : window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
   return (
     <>
-      {/* Mobile top bar */}
-      <div
-        className="lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 py-4 bg-paper/85 backdrop-blur-md border-b border-line"
-        data-testid="mobile-topbar"
+      {/* Fixed Top Bar */}
+      <motion.header
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7, ease: [0.7, 0, 0.2, 1] }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          condensed
+            ? "bg-paper/85 backdrop-blur-xl border-b border-line"
+            : "bg-transparent border-b border-transparent"
+        }`}
+        data-testid="top-nav"
       >
-        <Link to="/" className="flex items-center gap-2" data-testid="mobile-logo-link">
-          <LogoMark />
-          <span className="font-editorial text-lg leading-none">Khaitan EduOps</span>
-        </Link>
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="p-2 -mr-2"
-          aria-label="Toggle menu"
-          data-testid="mobile-menu-toggle"
+        <div
+          className={`flex items-center justify-between px-5 md:px-8 lg:px-10 transition-all duration-500 ${
+            condensed ? "py-3" : "py-5"
+          }`}
         >
-          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
-      </div>
+          {/* Left — Logo */}
+          <Link
+            to="/"
+            onClick={goHome}
+            className="flex items-center gap-2.5 group"
+            data-testid="topbar-logo"
+          >
+            <LogoMark />
+            <div className="leading-tight hidden sm:block">
+              <div className="font-editorial text-[19px] tracking-tight text-ink">
+                Khaitan
+              </div>
+              <div className="text-[9px] uppercase tracking-[0.22em] text-slate-brand -mt-0.5">
+                EduOps · Est. 2024
+              </div>
+            </div>
+          </Link>
+
+          {/* Center — Manifesto pill */}
+          <nav
+            className="hidden lg:flex items-center gap-1 bg-paper/70 backdrop-blur-md border border-line rounded-full px-2 py-1.5 shadow-[0_1px_0_0_rgba(10,22,40,0.03)]"
+            data-testid="top-manifesto-nav"
+          >
+            {manifesto.map((item, i) => {
+              const isActive =
+                location.pathname === "/" && active === item.section;
+              return (
+                <Link
+                  key={item.section}
+                  to={`/#${item.section}`}
+                  onClick={(e) => handleNav(item, e)}
+                  className={`group relative flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] transition-all ${
+                    isActive
+                      ? "bg-ink text-paper"
+                      : "text-ink/75 hover:text-ink"
+                  }`}
+                  data-testid={`topnav-${item.section}`}
+                >
+                  <span
+                    className={`text-[9px] font-mono ${
+                      isActive ? "text-paper/60" : "text-slate-brand"
+                    }`}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="tracking-tight">{item.label}</span>
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Right — Pages + CTA */}
+          <div className="flex items-center gap-2 md:gap-4">
+            <nav className="hidden md:flex items-center gap-5 mr-2">
+              {pages.map((p) => {
+                const isActive = location.pathname === p.to;
+                return (
+                  <Link
+                    key={p.to}
+                    to={p.to}
+                    className={`relative text-[13px] transition-colors ${
+                      isActive ? "text-ink" : "text-ink/70 hover:text-ink"
+                    }`}
+                    data-testid={`topnav-page-${p.label.toLowerCase()}`}
+                  >
+                    <span className="link-underline">{p.label}</span>
+                    {isActive && (
+                      <motion.span
+                        layoutId="page-dot"
+                        className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-orange-brand"
+                      />
+                    )}
+                  </Link>
+                );
+              })}
+            </nav>
+            <Link
+              to="/contact"
+              className="hidden md:inline-flex items-center gap-2 pl-4 pr-1 py-1 rounded-full bg-ink text-paper hover:bg-orange-brand transition-colors group"
+              data-testid="topbar-book-demo"
+            >
+              <span className="text-[12.5px] font-medium">Book a demo</span>
+              <span className="w-7 h-7 rounded-full bg-orange-brand group-hover:bg-paper text-paper group-hover:text-ink flex items-center justify-center transition-colors">
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </span>
+            </Link>
+
+            {/* Mobile toggle */}
+            <button
+              onClick={() => setOpen((v) => !v)}
+              className="lg:hidden p-2 -mr-2 text-ink"
+              aria-label="Toggle menu"
+              data-testid="mobile-menu-toggle"
+            >
+              {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
+        </div>
+      </motion.header>
 
       {/* Mobile Drawer */}
       <AnimatePresence>
         {open && (
           <motion.aside
-            initial={{ x: "-100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "-100%" }}
-            transition={{ duration: 0.5, ease: [0.7, 0, 0.2, 1] }}
-            className="lg:hidden fixed inset-0 z-40 bg-ink text-paper pt-20 px-6 pb-8 overflow-y-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="lg:hidden fixed inset-0 z-40 bg-ink text-paper pt-24 px-6 pb-8 overflow-y-auto"
             data-testid="mobile-drawer"
           >
-            <SidebarContent
+            <MobileNav
               active={active}
               onNav={handleNav}
-              variant="dark"
               location={location}
+              setOpen={setOpen}
             />
           </motion.aside>
         )}
       </AnimatePresence>
-
-      {/* Desktop Fixed Sidebar */}
-      <aside
-        className="hidden lg:flex fixed left-0 top-0 bottom-0 w-[260px] xl:w-[280px] z-40 flex-col border-r border-line bg-paper/70 backdrop-blur-sm"
-        data-testid="desktop-sidebar"
-      >
-        <div className="px-7 pt-8 pb-6 border-b border-line-soft">
-          <Link
-            to="/"
-            className="flex items-start gap-2.5 group"
-            data-testid="desktop-logo-link"
-          >
-            <LogoMark />
-            <div className="leading-tight">
-              <div className="font-editorial text-[22px] tracking-tight text-ink">
-                Khaitan
-              </div>
-              <div className="text-[11px] uppercase tracking-[0.18em] text-slate-brand mt-0.5">
-                EduOps · Est. 2024
-              </div>
-            </div>
-          </Link>
-        </div>
-
-        <div className="flex-1 overflow-y-auto no-scrollbar px-7 py-6">
-          <SidebarContent
-            active={active}
-            onNav={handleNav}
-            variant="light"
-            location={location}
-          />
-        </div>
-
-        <div className="px-7 py-5 border-t border-line-soft">
-          <a
-            href="#top"
-            onClick={(e) => {
-              e.preventDefault();
-              window.__lenis
-                ? window.__lenis.scrollTo(0, { duration: 1.4 })
-                : window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-            className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-slate-brand hover:text-ink transition-colors"
-            data-testid="back-to-top"
-          >
-            <span className="w-6 h-px bg-current" />
-            Back to top
-          </a>
-        </div>
-      </aside>
     </>
   );
 };
 
-const SidebarContent = ({ active, onNav, variant, location }) => {
-  const isDark = variant === "dark";
-  const muted = isDark ? "text-paper/50" : "text-slate-brand";
-  const text = isDark ? "text-paper" : "text-ink";
-  const activeText = isDark ? "text-paper" : "text-ink";
-  const activeDot = "bg-orange-brand";
-
-  return (
-    <div className="flex flex-col gap-10">
-      <div>
-        <div className={`text-[10px] uppercase tracking-[0.22em] ${muted} mb-4`}>
-          Manifesto
-        </div>
-        <ul className="space-y-1">
-          {nav.map((item, i) => {
-            const isActive =
-              location.pathname === "/" && active === (item.section || "top");
-            return (
-              <li key={item.label}>
-                <Link
-                  to={item.to}
-                  onClick={(e) => onNav(item, e)}
-                  className={`group flex items-center gap-3 py-1.5 text-[14px] transition-colors ${
-                    isActive ? activeText : muted
-                  } hover:${text.replace("text-", "text-")}`}
-                  data-testid={`sidebar-nav-${item.section || i}`}
-                >
-                  <span
-                    className={`text-[10px] font-mono ${
-                      isDark ? "text-paper/40" : "text-slate-brand"
-                    }`}
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span
-                    className={`w-1.5 h-1.5 rounded-full transition-all ${
-                      isActive ? activeDot : "bg-transparent"
-                    }`}
-                  />
-                  <span className="tracking-tight">{item.label}</span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+const MobileNav = ({ active, onNav, location, setOpen }) => (
+  <div className="flex flex-col gap-10">
+    <div>
+      <div className="text-[10px] uppercase tracking-[0.22em] text-paper/50 mb-5">
+        Manifesto
       </div>
-
-      <div>
-        <div className={`text-[10px] uppercase tracking-[0.22em] ${muted} mb-4`}>
-          Pages
-        </div>
-        <ul className="space-y-1">
-          {secondary.map((item, i) => {
-            const isActive = location.pathname === item.to;
-            return (
-              <li key={item.label}>
-                <Link
-                  to={item.to}
-                  className={`group flex items-center gap-3 py-1.5 text-[14px] transition-colors ${
-                    isActive ? activeText : muted
+      <ul className="space-y-3">
+        {manifesto.map((item, i) => {
+          const isActive =
+            location.pathname === "/" && active === item.section;
+          return (
+            <li key={item.section}>
+              <Link
+                to={`/#${item.section}`}
+                onClick={(e) => {
+                  onNav(item, e);
+                  setOpen(false);
+                }}
+                className="flex items-baseline gap-4 group"
+                data-testid={`mobile-nav-${item.section}`}
+              >
+                <span className="text-[11px] font-mono text-paper/40">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span
+                  className={`font-editorial text-3xl leading-none tracking-tight ${
+                    isActive ? "text-orange-brand" : "text-paper"
                   }`}
-                  data-testid={`sidebar-page-${item.label.toLowerCase().replace(/\s/g, "-")}`}
                 >
-                  <span
-                    className={`text-[10px] font-mono ${
-                      isDark ? "text-paper/40" : "text-slate-brand"
-                    }`}
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span
-                    className={`w-1.5 h-1.5 rounded-full transition-all ${
-                      isActive ? activeDot : "bg-transparent"
-                    }`}
-                  />
-                  <span className="tracking-tight">{item.label}</span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-
-      <div>
-        <div className={`text-[10px] uppercase tracking-[0.22em] ${muted} mb-4`}>
-          Engage
-        </div>
-        <Link
-          to="/contact"
-          className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-medium transition-transform hover:-translate-y-0.5 ${
-            isDark
-              ? "bg-orange-brand text-paper"
-              : "bg-ink text-paper hover:bg-orange-brand"
-          }`}
-          data-testid="sidebar-book-demo"
-        >
-          Book a demo
-          <ArrowUpRight className="w-3.5 h-3.5" />
-        </Link>
-      </div>
-
-      <div className={`text-[11px] ${muted} leading-relaxed mt-auto`}>
-        <div className="mb-1">Khaitan EduOps Pvt. Ltd.</div>
-        <div>An Education Management</div>
-        <div>Operating Company.</div>
-      </div>
+                  {item.label}
+                </span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
     </div>
-  );
-};
+
+    <div>
+      <div className="text-[10px] uppercase tracking-[0.22em] text-paper/50 mb-5">
+        Pages
+      </div>
+      <ul className="space-y-3">
+        {pages.map((p, i) => (
+          <li key={p.to}>
+            <Link
+              to={p.to}
+              onClick={() => setOpen(false)}
+              className="flex items-baseline gap-4"
+              data-testid={`mobile-page-${p.label.toLowerCase()}`}
+            >
+              <span className="text-[11px] font-mono text-paper/40">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="font-editorial text-3xl leading-none tracking-tight text-paper">
+                {p.label}
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <Link
+      to="/contact"
+      onClick={() => setOpen(false)}
+      className="inline-flex items-center justify-between gap-2 px-6 py-4 rounded-full bg-orange-brand text-paper mt-2"
+      data-testid="mobile-book-demo"
+    >
+      <span className="text-[15px] font-medium">Book a demo</span>
+      <ArrowUpRight className="w-4 h-4" />
+    </Link>
+
+    <div className="text-[11px] text-paper/50 leading-relaxed mt-6">
+      Khaitan EduOps Pvt. Ltd.
+      <br />
+      An Education Management Operating Company.
+    </div>
+  </div>
+);
 
 const LogoMark = () => (
   <div className="relative w-8 h-8 shrink-0" aria-hidden>

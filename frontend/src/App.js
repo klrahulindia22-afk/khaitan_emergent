@@ -28,7 +28,7 @@ function App() {
         <SmoothScroll>
           <ScrollToTop />
           <Sidebar />
-          <div className="lg:pl-[260px] xl:pl-[280px]">
+          <div>
             <Routes>
               <Route path="/" element={<Landing />} />
               <Route path="/about" element={<About />} />
