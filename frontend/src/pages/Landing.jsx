@@ -1,0 +1,25 @@
+import { Hero } from "../components/Hero";
+import { ProblemSection } from "../components/ProblemSection";
+import { PromoterPain } from "../components/PromoterPain";
+import { Marquee } from "../components/Marquee";
+import { ComplianceGap } from "../components/ComplianceGap";
+import { Differentiator } from "../components/Differentiator";
+import { SevenPillars } from "../components/SevenPillars";
+import { CTASection } from "../components/CTASection";
+import { Footer } from "../components/Footer";
+
+export default function Landing() {
+  return (
+    <main className="relative" data-testid="landing-page">
+      <Hero />
+      <ProblemSection />
+      <PromoterPain />
+      <Marquee variant="light" />
+      <ComplianceGap />
+      <Differentiator />
+      <SevenPillars />
+      <CTASection />
+      <Footer />
+    </main>
+  );
+}
