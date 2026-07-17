@@ -22,6 +22,13 @@ db = client[os.environ['DB_NAME']]
 app = FastAPI(title="Khaitan EduOps API")
 api_router = APIRouter(prefix="/api")
 
+# Logger
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
 
 # ---------- Models ----------
 class ContactSubmission(BaseModel):
@@ -128,7 +135,6 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
-logger = logging.getLogger(__name__)
 
 
 @app.on_event("shutdown")
