@@ -29,8 +29,18 @@ const principles = [
 ];
 
 const leadership = [
-  { name: "Asheesh Kumar Sharma", role: "Co-founder & CEO", img: "https://customer-assets-gfyr7b9c.emergentagent.net/job_consistency-platform/artifacts/qsvww6q1_Asheesh%20Kumar%20Sharma.png" },
-  { name: "Vedant Khaitan", role: "Founder & Director", img: "https://customer-assets-gfyr7b9c.emergentagent.net/job_consistency-platform/artifacts/nkk7gpqq_Vedant%20Khaitan.png" },
+  {
+    name: "Vedant Khaitan",
+    role: "Founder & Director",
+    img: "https://customer-assets-gfyr7b9c.emergentagent.net/job_consistency-platform/artifacts/nkk7gpqq_Vedant%20Khaitan.png",
+    bio: "Coming from a distinguished background of leading lawyers, industrialists and educationists, Mr. Khaitan represents the best of knowledge, entrepreneurship and dynamism. The Khaitan family runs numerous schools that are beacons of excellence — The Khaitan School (Noida), Khaitan Public School (Ghaziabad), Khaitan Preschool (Noida), BDM International School (Kolkata), Indus Valley World School (Kolkata) and Sunny Preparatory School (Kolkata) among them.\n\nMr. Khaitan is an alumnus of Modern School, Vasant Vihar, and a Mechanical Engineer from The University of Michigan, Ann Arbor, USA. Inducted into the management of The Khaitan School in 2008, he has played key roles in several of the institution's milestones, including founding the Khaitan Preschool in 2013 — since recognised as a leading educational institution in Noida.\n\nHe helped set up the Gautam Budh Nagar Chapter of the Independent School Federation of India and co-founded the K12 education chapter of FICCI ARISE, the education policy advocacy body — where he currently chairs the North Committee and the Membership Committee. He has also completed the Business Mastery Programme and an intensive course on Digital Marketing at Business Coaching India by Mr. Rahul Jain.",
+  },
+  {
+    name: "Asheesh Kumar Sharma",
+    role: "Co-founder & CEO",
+    img: "https://customer-assets-gfyr7b9c.emergentagent.net/job_consistency-platform/artifacts/qsvww6q1_Asheesh%20Kumar%20Sharma.png",
+    bio: "An MBA in Operations, ISO 9001-2000 Lead Auditor and Six Sigma Green Belt with over 22+ years of experience in launching and establishing schools. He has worked with renowned school brands — DPS, GD Goenka, Ambassador School Dubai, Gaurs and Khaitan — contributing to land acquisition, NOCs, architectural coordination, marketing, branding, strategic planning, recruitment, training, process and curriculum development, financial planning, cost accounting, expansion planning (franchise, operating and lease models) and affiliations.\n\nHe has led the implementation of SOPs, KRAs, KPIs, ERP, LMS and organisational review systems (WBRs, MBRs and QBRs) to run multiple schools in parallel. Through dedication, integrity and hard work, he has established school brands at scale — most notably Gaurs International School (built into a chain across Noida/NCR for the real estate group) and Khaitan World School in Amroha and Ghaziabad.",
+  },
 ];
 
 export default function About() {
@@ -180,41 +190,55 @@ export default function About() {
           </span>
         </h2>
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-2xl">
+        <div className="mt-16 md:mt-20 flex flex-col gap-16 md:gap-24">
           {leadership.map((m, i) => (
-            <motion.div
+            <motion.article
               key={m.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.7, delay: i * 0.1 }}
-              className="group"
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.8, ease: [0.7, 0, 0.2, 1] }}
+              className={`grid lg:grid-cols-12 gap-8 md:gap-12 items-start ${
+                i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
+              }`}
               data-testid={`founder-${i}`}
             >
-              <div className="relative aspect-[4/5] overflow-hidden clip-corner bg-ink">
-                <img
-                  src={m.img}
-                  alt={m.name}
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.03]"
-                  style={{ filter: "grayscale(1) contrast(1.05)" }}
-                  draggable={false}
-                />
-                <div className="absolute top-4 left-4 bg-paper text-ink px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] font-mono">
-                  0{i + 1} · Founder
-                </div>
-                <div className="absolute bottom-4 right-4 w-2.5 h-2.5 rounded-full bg-orange-brand" />
-              </div>
-              <div className="mt-5 flex items-baseline justify-between gap-4">
-                <div>
-                  <div className="font-editorial text-[26px] md:text-[30px] leading-none tracking-tight">
-                    {m.name}
+              {/* Photo */}
+              <div className="lg:col-span-4">
+                <div className="relative aspect-[4/5] overflow-hidden clip-corner bg-ink max-w-[380px]">
+                  <img
+                    src={m.img}
+                    alt={m.name}
+                    className="w-full h-full object-cover"
+                    style={{ filter: "grayscale(1) contrast(1.05)" }}
+                    draggable={false}
+                  />
+                  <div className="absolute top-4 left-4 bg-paper text-ink px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] font-mono">
+                    0{i + 1} · Founder
                   </div>
-                  <div className="text-[12px] uppercase tracking-[0.22em] text-slate-brand mt-3">
-                    {m.role}
-                  </div>
+                  <div className="absolute bottom-4 right-4 w-2.5 h-2.5 rounded-full bg-orange-brand" />
                 </div>
               </div>
-            </motion.div>
+
+              {/* Bio */}
+              <div className="lg:col-span-8">
+                <div className="text-[10px] uppercase tracking-[0.22em] text-orange-brand mb-3 font-mono">
+                  0{i + 1} · {m.role}
+                </div>
+                <h3 className="font-editorial text-[9vw] md:text-[5.4vw] lg:text-[3.6vw] leading-[0.95] tracking-[-0.025em]">
+                  {m.name}
+                </h3>
+                <div className="mt-6 max-w-3xl space-y-4 text-[15px] md:text-[15.5px] leading-[1.7] text-ink/80">
+                  {m.bio.split("\n\n").map((para, idx) => (
+                    <p key={idx}>{para}</p>
+                  ))}
+                </div>
+                <div className="mt-8 flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-slate-brand">
+                  <span className="w-8 h-px bg-orange-brand" />
+                  {m.role}
+                </div>
+              </div>
+            </motion.article>
           ))}
         </div>
       </section>
