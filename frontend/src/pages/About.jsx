@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { Footer } from "../components/Footer";
 import { Marquee } from "../components/Marquee";
-import {
-  AboutPortraitIllustration,
-  LeadershipMonogram,
-} from "../components/AboutIllustration";
+import { AboutPortraitIllustration } from "../components/AboutIllustration";
 
 const principles = [
   {
@@ -32,10 +29,8 @@ const principles = [
 ];
 
 const leadership = [
-  { name: "Asheesh Kumar Sharma", role: "Co-founder & Group Operator", img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800&auto=format&fit=crop" },
-  { name: "M. Iyer", role: "Head of Academic Systems", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800&auto=format&fit=crop" },
-  { name: "S. Kapoor", role: "Head of Playbook Engineering", img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" },
-  { name: "A. Verghese", role: "Head of Transformation Services", img: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=800&auto=format&fit=crop" },
+  { name: "Asheesh Kumar Sharma", role: "Co-founder & CEO", img: "https://customer-assets-gfyr7b9c.emergentagent.net/job_consistency-platform/artifacts/qsvww6q1_Asheesh%20Kumar%20Sharma.png" },
+  { name: "Vedant Khaitan", role: "Founder & Director", img: "https://customer-assets-gfyr7b9c.emergentagent.net/job_consistency-platform/artifacts/nkk7gpqq_Vedant%20Khaitan.png" },
 ];
 
 export default function About() {
@@ -173,37 +168,50 @@ export default function About() {
         </div>
       </section>
 
-      {/* Leadership */}
+      {/* Founders */}
       <section className="relative bg-paper-warm text-ink py-24 md:py-32 px-6 md:px-10 lg:px-14 border-t border-line">
         <div className="text-[10px] uppercase tracking-[0.22em] text-slate-brand mb-6">
-          Leadership
+          Founders
         </div>
         <h2 className="font-editorial text-[9vw] md:text-[6vw] lg:text-[4.4vw] leading-[0.9] tracking-[-0.03em] max-w-5xl">
-          Operators, not{" "}
+          Our{" "}
           <span className="italic font-editorial-soft text-orange-brand">
-            observers.
+            Founders.
           </span>
         </h2>
 
-        <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6">
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-5xl">
           {leadership.map((m, i) => (
             <motion.div
               key={m.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.7, delay: i * 0.08 }}
+              transition={{ duration: 0.7, delay: i * 0.1 }}
               className="group"
+              data-testid={`founder-${i}`}
             >
-              <div className="relative aspect-[4/5] overflow-hidden clip-corner">
-                <LeadershipMonogram name={m.name} role={m.role} index={i} />
-              </div>
-              <div className="mt-4">
-                <div className="font-editorial text-[22px] leading-none">
-                  {m.name}
+              <div className="relative aspect-[4/5] overflow-hidden clip-corner bg-ink">
+                <img
+                  src={m.img}
+                  alt={m.name}
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.03]"
+                  style={{ filter: "grayscale(1) contrast(1.05)" }}
+                  draggable={false}
+                />
+                <div className="absolute top-4 left-4 bg-paper text-ink px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] font-mono">
+                  0{i + 1} · Founder
                 </div>
-                <div className="text-[12px] uppercase tracking-[0.2em] text-slate-brand mt-2">
-                  {m.role}
+                <div className="absolute bottom-4 right-4 w-2.5 h-2.5 rounded-full bg-orange-brand" />
+              </div>
+              <div className="mt-5 flex items-baseline justify-between gap-4">
+                <div>
+                  <div className="font-editorial text-[26px] md:text-[30px] leading-none tracking-tight">
+                    {m.name}
+                  </div>
+                  <div className="text-[12px] uppercase tracking-[0.22em] text-slate-brand mt-3">
+                    {m.role}
+                  </div>
                 </div>
               </div>
             </motion.div>
