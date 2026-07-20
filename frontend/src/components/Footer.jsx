@@ -24,7 +24,10 @@ export const Footer = () => {
               className="font-logo text-[7.14vw] md:text-[5.35vw] leading-[0.95] tracking-[-0.02em]"
             >
               <span>Khaitan</span>{" "}
-              <span className="text-orange-brand">EduOps Pvt. Ltd.</span>
+              <span className="text-orange-brand">
+                EduOps{" "}
+                <span className="text-[75%]">Pvt. Ltd.</span>
+              </span>
             </motion.h2>
           </div>
         </div>
