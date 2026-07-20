@@ -21,9 +21,9 @@ export const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.9, ease: [0.7, 0, 0.2, 1] }}
-              className="font-editorial text-[12vw] md:text-[9vw] leading-[0.85] tracking-[-0.03em]"
+              className="font-logo text-[12vw] md:text-[9vw] leading-[0.9] tracking-[-0.02em]"
             >
-              <span className="italic font-editorial-soft">Khaitan</span>{" "}
+              <span>Khaitan</span>{" "}
               <span className="text-orange-brand">EduOps.</span>
             </motion.h2>
           </div>
