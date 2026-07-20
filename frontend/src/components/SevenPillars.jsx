@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { pillars } from "../data/pillars";
 import { ChapterHead } from "./ProblemSection";
+import { PillarIllustration } from "./PillarIllustration";
 
 export const SevenPillars = () => {
   return (
@@ -75,24 +76,20 @@ export const PillarCard = ({ pillar, index }) => {
       className="group relative flex flex-col h-full bg-ink-deep border border-paper/10 hover:border-orange-brand/60 transition-colors overflow-hidden"
       data-testid={`pillar-card-${pillar.slug}`}
     >
-      {/* Image */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-ink">
-        <img
-          src={pillar.image}
-          alt={pillar.title}
-          className="w-full h-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.7,0,0.2,1)] group-hover:scale-[1.06]"
-          style={{ filter: "grayscale(0.15) contrast(1.05)" }}
+      {/* Illustration */}
+      <div className="relative aspect-[4/3] overflow-hidden bg-cream">
+        <PillarIllustration
+          slug={pillar.slug}
+          className="transition-transform duration-[900ms] ease-[cubic-bezier(0.7,0,0.2,1)] group-hover:scale-[1.04]"
         />
-        <div className="absolute inset-0 bg-ink/25 mix-blend-multiply" />
-        <div className="grain-light absolute inset-0 opacity-60" />
         <div
           className={`absolute top-4 left-4 px-2.5 py-1 text-[10px] uppercase tracking-[0.22em] font-mono ${
-            accentOrange ? "bg-orange-brand text-paper" : "bg-paper text-ink"
+            accentOrange ? "bg-orange-brand text-paper" : "bg-ink text-paper"
           }`}
         >
           {pillar.tag}
         </div>
-        <div className="absolute top-4 right-4 font-editorial italic text-[52px] leading-none text-paper/80">
+        <div className="absolute top-4 right-4 font-editorial italic text-[52px] leading-none text-ink/80">
           {pillar.number}
         </div>
       </div>

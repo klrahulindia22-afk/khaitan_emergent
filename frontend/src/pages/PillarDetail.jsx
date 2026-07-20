@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { ArrowUpRight, Check, ArrowLeft } from "lucide-react";
 import { pillars } from "../data/pillars";
 import { Footer } from "../components/Footer";
+import { PillarIllustration } from "../components/PillarIllustration";
 
 export default function PillarDetail() {
   const { slug } = useParams();
@@ -87,16 +88,9 @@ export default function PillarDetail() {
           </div>
 
           <div className="lg:col-span-6">
-            <motion.div style={{ y: yImg }} className="relative aspect-[5/4] overflow-hidden bg-ink clip-corner">
-              <img
-                src={pillar.image}
-                alt={pillar.title}
-                className="w-full h-full object-cover"
-                style={{ filter: "contrast(1.05) saturate(0.95)" }}
-              />
-              <div className="absolute inset-0 bg-ink/15 mix-blend-multiply" />
-              <div className="grain-light absolute inset-0 opacity-70" />
-              <div className="absolute top-4 left-4 bg-paper text-ink px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] font-mono">
+            <motion.div style={{ y: yImg }} className="relative aspect-[5/4] overflow-hidden bg-cream clip-corner border border-line">
+              <PillarIllustration slug={pillar.slug} />
+              <div className="absolute top-4 left-4 bg-ink text-paper px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] font-mono">
                 Fig · {pillar.tag}
               </div>
             </motion.div>
