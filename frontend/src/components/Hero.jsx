@@ -126,15 +126,6 @@ export const Hero = () => {
             style={{ y: yImage }}
             className="relative w-full ml-auto"
           >
-            <div className="flex items-center justify-between mb-4">
-              <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-slate-brand">
-                The 7 Pillars
-              </div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-slate-brand">
-                Idx · 07
-              </div>
-            </div>
-
             <div
               className="grid grid-cols-2 border-t border-l border-ink/15"
               data-testid="hero-pillar-index"
