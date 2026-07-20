@@ -28,7 +28,7 @@ const principles = [
 ];
 
 const leadership = [
-  { name: "R. Khaitan", role: "Founder & Group Operator", img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800&auto=format&fit=crop" },
+  { name: "Asheesh Kumar Sharma", role: "Co-founder & Group Operator", img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800&auto=format&fit=crop" },
   { name: "M. Iyer", role: "Head of Academic Systems", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800&auto=format&fit=crop" },
   { name: "S. Kapoor", role: "Head of Playbook Engineering", img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" },
   { name: "A. Verghese", role: "Head of Transformation Services", img: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=800&auto=format&fit=crop" },
