@@ -59,6 +59,7 @@ export const Hero = () => {
               words={line2}
               baseIndex={line1.length}
               italic
+              accent
             />
             <RevealLine
               words={line3}
@@ -175,7 +176,7 @@ const RevealLine = ({ words, baseIndex, italic, italicLast, accent, electric }) 
       const isItalic = italic || (italicLast && isLast);
       const colorClass = electric
         ? "text-electric"
-        : accent && isLast
+        : accent
           ? "text-orange-brand"
           : "";
       return (
