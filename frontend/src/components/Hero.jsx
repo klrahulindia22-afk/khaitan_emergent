@@ -1,7 +1,18 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { ArrowUpRight, Circle } from "lucide-react";
+import { ArrowUpRight, Circle, MoveUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { pillars } from "../data/pillars";
+
+const briefs = {
+  "academic-excellence": "Standardised pedagogy across every classroom.",
+  "review-accountability": "Reviews as a system, with named owners.",
+  "playbook-agent": "Always-on operator that prescribes the next best action.",
+  "kosmos-erp": "The transactional backbone of a K-12 school.",
+  "eduops-academy": "Capability building for the entire leadership stack.",
+  "transformation-services": "Resident squad on-ground for 90 days.",
+  "corporate-services": "Group office as a shared services layer.",
+};
 
 const line1 = ["Schools", "deserve"];
 const line2 = ["operating", "systems,"];
@@ -23,9 +34,7 @@ export const Hero = () => {
   });
 
   const yImage = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
-  const yBadge = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
   const rotateAsterisk = useTransform(scrollYProgress, [0, 1], [0, 90]);
-  const scaleImage = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
 
   return (
     <section
@@ -111,35 +120,86 @@ export const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Right — Spotlight image */}
+        {/* Right — 7 Pillars mini index */}
         <div className="lg:col-span-4 xl:col-span-3">
           <motion.div
-            style={{ y: yImage, scale: scaleImage }}
-            className="relative aspect-[3/4] w-full max-w-[360px] ml-auto"
+            style={{ y: yImage }}
+            className="relative w-full max-w-[420px] ml-auto"
           >
-            <div className="absolute inset-0 clip-corner overflow-hidden bg-ink">
-              <img
-                src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=1200&auto=format&fit=crop"
-                alt="Classroom operations"
-                className="w-full h-full object-cover"
-                style={{ filter: "contrast(1.05) saturate(0.9)" }}
-              />
-              <div className="absolute inset-0 bg-ink/10 mix-blend-multiply" />
-              <div className="grain-light absolute inset-0" />
-            </div>
-            <motion.div
-              style={{ y: yBadge }}
-              className="absolute -bottom-6 -left-6 md:-left-10 bg-orange-brand text-paper px-4 py-3 rounded-sm shadow-lg"
-            >
-              <div className="text-[10px] uppercase tracking-[0.2em] mb-1 opacity-80">
-                Variance today
+            <div className="flex items-center justify-between mb-4">
+              <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-slate-brand">
+                The 7 Pillars
               </div>
-              <div className="font-editorial text-3xl leading-none">30–50%</div>
-              <div className="text-[10px] mt-1 opacity-80">across sections</div>
-            </motion.div>
-            <div className="absolute -top-6 right-2 font-mono text-[10px] uppercase tracking-[0.22em] text-slate-brand">
-              Fig. 01 / Real school. Real data.
+              <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-slate-brand">
+                Idx · 07
+              </div>
             </div>
+
+            <ul
+              className="border-t border-ink/15"
+              data-testid="hero-pillar-index"
+            >
+              {pillars.map((p, i) => (
+                <motion.li
+                  key={p.slug}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: 1.2 + i * 0.06,
+                    ease: [0.7, 0, 0.2, 1],
+                  }}
+                  className="border-b border-ink/15"
+                >
+                  <Link
+                    to={`/pillars/${p.slug}`}
+                    className="group flex items-start gap-3 py-3 hover:bg-ink/[0.03] -mx-2 px-2 transition-colors"
+                    data-testid={`hero-pillar-${p.slug}`}
+                  >
+                    <span className="font-mono text-[10.5px] text-orange-brand pt-1 shrink-0 tabular-nums">
+                      {p.number}
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-baseline justify-between gap-2">
+                        <span className="font-editorial text-[16px] md:text-[17px] leading-tight tracking-tight text-ink group-hover:text-orange-brand transition-colors truncate">
+                          {p.title}
+                        </span>
+                        <MoveUpRight className="w-3 h-3 text-slate-brand shrink-0 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                      </div>
+                      <div className="text-[12px] leading-[1.4] text-ink/60 mt-0.5">
+                        {briefs[p.slug]}
+                      </div>
+                    </div>
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 1.8 }}
+              className="mt-5 flex items-center justify-between"
+            >
+              <span className="text-[10px] uppercase tracking-[0.22em] text-slate-brand">
+                Deployable in isolation or as one stack
+              </span>
+              <Link
+                to="/#pillars"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.getElementById("pillars");
+                  if (window.__lenis)
+                    window.__lenis.scrollTo(el, { duration: 1.6 });
+                  else el?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="inline-flex items-center gap-1.5 text-[11px] font-medium text-ink hover:text-orange-brand transition-colors"
+                data-testid="hero-pillar-explore"
+              >
+                Explore
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </div>
@@ -149,7 +209,7 @@ export const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.8 }}
-        className="relative z-10 mt-20 md:mt-28 flex items-end justify-between gap-6"
+        className="relative z-10 mt-16 md:mt-24 flex items-end justify-between gap-6"
       >
         <div className="flex items-center gap-3 text-[11px] font-mono uppercase tracking-[0.22em] text-slate-brand">
           <span>Scroll</span>
