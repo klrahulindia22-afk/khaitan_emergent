@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { Footer } from "../components/Footer";
 import { Marquee } from "../components/Marquee";
+import {
+  AboutPortraitIllustration,
+  LeadershipMonogram,
+} from "../components/AboutIllustration";
 
 const principles = [
   {
@@ -94,14 +98,7 @@ export default function About() {
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-5 relative">
             <div className="relative aspect-[4/5] max-w-[420px] overflow-hidden clip-corner">
-              <img
-                src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1400&auto=format&fit=crop"
-                alt="School operations"
-                className="w-full h-full object-cover"
-                style={{ filter: "grayscale(0.2) contrast(1.05)" }}
-              />
-              <div className="absolute inset-0 bg-ink/20 mix-blend-multiply" />
-              <div className="grain-light absolute inset-0 opacity-70" />
+              <AboutPortraitIllustration />
             </div>
             <div className="absolute -bottom-4 -right-4 bg-orange-brand text-paper px-4 py-3">
               <div className="text-[10px] uppercase tracking-[0.22em]">Since 2024</div>
@@ -198,15 +195,8 @@ export default function About() {
               transition={{ duration: 0.7, delay: i * 0.08 }}
               className="group"
             >
-              <div className="relative aspect-[4/5] overflow-hidden bg-ink clip-corner">
-                <img
-                  src={m.img}
-                  alt={m.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
-                  style={{ filter: "grayscale(1) contrast(1.05)" }}
-                />
-                <div className="absolute inset-0 bg-orange-brand/0 group-hover:bg-orange-brand/20 mix-blend-multiply transition-colors" />
-                <div className="grain-light absolute inset-0 opacity-60" />
+              <div className="relative aspect-[4/5] overflow-hidden clip-corner">
+                <LeadershipMonogram name={m.name} role={m.role} index={i} />
               </div>
               <div className="mt-4">
                 <div className="font-editorial text-[22px] leading-none">
