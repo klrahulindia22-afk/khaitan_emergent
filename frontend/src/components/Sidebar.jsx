@@ -6,11 +6,11 @@ import { LOGO_URL } from "../data/brand";
 
 const manifesto = [
   { label: "Problem", section: "problem" },
-  { label: "Promoter", section: "promoter" },
   { label: "Why EduOps", section: "differentiator" },
   { label: "Pillars", section: "pillars" },
   { label: "Model", section: "model" },
   { label: "Clients", section: "clients" },
+  { label: "Advantage", section: "strategic" },
 ];
 
 const pages = [
@@ -45,7 +45,7 @@ export const Sidebar = () => {
 
   useEffect(() => {
     if (location.pathname !== "/") return;
-    const ids = ["problem", "promoter", "compliance", "differentiator", "pillars", "model", "clients"];
+    const ids = ["problem", "promoter", "compliance", "differentiator", "pillars", "model", "clients", "strategic"];
     const observers = [];
     ids.forEach((id) => {
       const el = document.getElementById(id);

@@ -7,6 +7,7 @@ import { Differentiator } from "../components/Differentiator";
 import { SevenPillars } from "../components/SevenPillars";
 import { BusinessModel } from "../components/BusinessModel";
 import { OurClients } from "../components/OurClients";
+import { StrategicAdvantage } from "../components/StrategicAdvantage";
 import { TheResult } from "../components/TheResult";
 import { CTASection } from "../components/CTASection";
 import { Footer } from "../components/Footer";
@@ -23,6 +24,7 @@ export default function Landing() {
       <SevenPillars />
       <BusinessModel />
       <OurClients />
+      <StrategicAdvantage />
       <TheResult />
       <CTASection />
       <Footer />
