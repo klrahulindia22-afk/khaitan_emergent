@@ -46,49 +46,20 @@ export const Hero = () => {
         </div>
       </motion.div>
 
-      {/* Top meta bar */}
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.15 }}
-        className="relative z-10 flex items-center justify-between mb-14 md:mb-24 text-[11px] uppercase tracking-[0.22em] text-slate-brand"
-      >
-        <div className="flex items-center gap-2.5">
-          <span className="relative flex w-2 h-2">
-            <span className="absolute inset-0 rounded-full bg-orange-brand animate-ping opacity-60" />
-            <span className="relative w-2 h-2 rounded-full bg-orange-brand" />
-          </span>
-          <span>Now onboarding — Cohort 03 · 2026</span>
-        </div>
-        <div className="hidden md:block font-mono">EDU/OPS/24-25</div>
-      </motion.div>
+      {/* Top meta bar removed per direction */}
 
-      <div className="relative z-10 grid lg:grid-cols-12 gap-10 items-end">
+      <div className="relative z-10 grid lg:grid-cols-12 gap-10 items-end mt-4 md:mt-6">
         {/* Left — Headline */}
         <div className="lg:col-span-8 xl:col-span-9">
-          {/* eyebrow */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex items-center gap-3 mb-8 md:mb-10"
-          >
-            <span className="text-[10px] font-mono uppercase tracking-[0.24em] text-slate-brand">
-              Ch. 00 — The Manifesto
-            </span>
-            <span className="w-16 h-px bg-ink/30" />
-          </motion.div>
+          {/* eyebrow removed per direction */}
 
-          <h1 className="font-editorial text-[13.5vw] md:text-[10.5vw] lg:text-[8.4vw] xl:text-[7.4vw] leading-[0.86] tracking-[-0.035em] text-ink">
+          <h1 className="font-editorial text-[13.5vw] md:text-[10.5vw] lg:text-[8.4vw] xl:text-[7.4vw] leading-[0.82] tracking-[-0.035em] text-ink">
             <RevealLine words={line1} baseIndex={0} />
-            <br />
             <RevealLine
               words={line2}
               baseIndex={line1.length}
               italic
-              electric
             />
-            <br />
             <RevealLine
               words={line3}
               baseIndex={line1.length + line2.length}
@@ -98,8 +69,8 @@ export const Hero = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 1.4, ease: [0.7, 0, 0.2, 1] }}
-            className="mt-10 md:mt-14 max-w-xl text-[16px] md:text-[17px] leading-[1.55] text-ink/75"
+            transition={{ duration: 0.9, delay: 1.1, ease: [0.7, 0, 0.2, 1] }}
+            className="mt-8 md:mt-10 max-w-xl text-[16px] md:text-[17px] leading-[1.55] text-ink/75"
           >
             Khaitan EduOps is an Education Management Operating Company that
             designs, implements, and continuously improves the complete
@@ -109,8 +80,8 @@ export const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.6 }}
-            className="mt-10 flex flex-wrap items-center gap-4"
+            transition={{ duration: 0.8, delay: 1.3 }}
+            className="mt-8 flex flex-wrap items-center gap-4"
           >
             <Link
               to="/contact"
