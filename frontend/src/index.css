@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Manrope:wght@200..800&family=JetBrains+Mono:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Manrope:wght@200..800&family=JetBrains+Mono:wght@300;400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -89,9 +89,9 @@
     }
 
     .font-logo {
-        font-family: "Cormorant Garamond", "Fraunces", ui-serif, Georgia, serif;
-        font-weight: 500;
-        letter-spacing: -0.01em;
+        font-family: "Nunito", ui-sans-serif, system-ui, sans-serif;
+        font-weight: 700;
+        letter-spacing: -0.015em;
     }
 
     .font-mono {
