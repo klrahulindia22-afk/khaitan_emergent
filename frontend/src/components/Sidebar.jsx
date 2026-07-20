@@ -7,9 +7,10 @@ import { LOGO_URL } from "../data/brand";
 const manifesto = [
   { label: "Problem", section: "problem" },
   { label: "Promoter", section: "promoter" },
-  { label: "Compliance", section: "compliance" },
   { label: "Why EduOps", section: "differentiator" },
-  { label: "7 Pillars", section: "pillars" },
+  { label: "Pillars", section: "pillars" },
+  { label: "Model", section: "model" },
+  { label: "Clients", section: "clients" },
 ];
 
 const pages = [
@@ -44,7 +45,7 @@ export const Sidebar = () => {
 
   useEffect(() => {
     if (location.pathname !== "/") return;
-    const ids = ["problem", "promoter", "compliance", "differentiator", "pillars"];
+    const ids = ["problem", "promoter", "compliance", "differentiator", "pillars", "model", "clients"];
     const observers = [];
     ids.forEach((id) => {
       const el = document.getElementById(id);

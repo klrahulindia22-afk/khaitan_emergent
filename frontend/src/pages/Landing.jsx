@@ -5,6 +5,8 @@ import { Marquee } from "../components/Marquee";
 import { ComplianceGap } from "../components/ComplianceGap";
 import { Differentiator } from "../components/Differentiator";
 import { SevenPillars } from "../components/SevenPillars";
+import { BusinessModel } from "../components/BusinessModel";
+import { OurClients } from "../components/OurClients";
 import { CTASection } from "../components/CTASection";
 import { Footer } from "../components/Footer";
 
@@ -18,6 +20,8 @@ export default function Landing() {
       <ComplianceGap />
       <Differentiator />
       <SevenPillars />
+      <BusinessModel />
+      <OurClients />
       <CTASection />
       <Footer />
     </main>
