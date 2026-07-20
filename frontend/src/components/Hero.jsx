@@ -59,10 +59,10 @@ export const Hero = () => {
 
       <div className="relative z-10 grid lg:grid-cols-12 gap-10 items-end mt-4 md:mt-6">
         {/* Left — Headline */}
-        <div className="lg:col-span-8 xl:col-span-9">
+        <div className="lg:col-span-7">
           {/* eyebrow removed per direction */}
 
-          <h1 className="font-editorial text-[13.5vw] md:text-[10.5vw] lg:text-[8.4vw] xl:text-[7.4vw] leading-[0.82] tracking-[-0.035em] text-ink">
+          <h1 className="font-editorial text-[13.5vw] md:text-[10.5vw] lg:text-[7vw] xl:text-[6.2vw] leading-[0.82] tracking-[-0.035em] text-ink">
             <RevealLine words={line1} baseIndex={0} />
             <RevealLine
               words={line2}
@@ -121,22 +121,22 @@ export const Hero = () => {
         </div>
 
         {/* Right — 7 Pillars mini index */}
-        <div className="lg:col-span-4 xl:col-span-3">
+        <div className="lg:col-span-5">
           <motion.div
             style={{ y: yImage }}
-            className="relative w-full max-w-[420px] ml-auto"
+            className="relative w-full ml-auto"
           >
-            <div className="flex items-center justify-between mb-4">
-              <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-slate-brand">
+            <div className="flex items-center justify-between mb-5">
+              <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-slate-brand">
                 The 7 Pillars
               </div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-slate-brand">
+              <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-slate-brand">
                 Idx · 07
               </div>
             </div>
 
             <ul
-              className="border-t border-ink/15"
+              className="border-t border-ink/20"
               data-testid="hero-pillar-index"
             >
               {pillars.map((p, i) => (
@@ -149,24 +149,24 @@ export const Hero = () => {
                     delay: 1.2 + i * 0.06,
                     ease: [0.7, 0, 0.2, 1],
                   }}
-                  className="border-b border-ink/15"
+                  className="border-b border-ink/20"
                 >
                   <Link
                     to={`/pillars/${p.slug}`}
-                    className="group flex items-start gap-3 py-3 hover:bg-ink/[0.03] -mx-2 px-2 transition-colors"
+                    className="group flex items-start gap-4 md:gap-5 py-4 md:py-5 hover:bg-ink/[0.03] -mx-3 px-3 transition-colors"
                     data-testid={`hero-pillar-${p.slug}`}
                   >
-                    <span className="font-mono text-[10.5px] text-orange-brand pt-1 shrink-0 tabular-nums">
+                    <span className="font-mono text-[13px] text-orange-brand pt-1.5 shrink-0 tabular-nums">
                       {p.number}
                     </span>
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-baseline justify-between gap-2">
-                        <span className="font-editorial text-[16px] md:text-[17px] leading-tight tracking-tight text-ink group-hover:text-orange-brand transition-colors truncate">
+                      <div className="flex items-baseline justify-between gap-3">
+                        <span className="font-editorial text-[22px] md:text-[26px] leading-[1.1] tracking-tight text-ink group-hover:text-orange-brand transition-colors">
                           {p.title}
                         </span>
-                        <MoveUpRight className="w-3 h-3 text-slate-brand shrink-0 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                        <MoveUpRight className="w-4 h-4 text-slate-brand shrink-0 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all mt-1" />
                       </div>
-                      <div className="text-[12px] leading-[1.4] text-ink/60 mt-0.5">
+                      <div className="text-[14px] md:text-[15px] leading-[1.5] text-ink/65 mt-1.5">
                         {briefs[p.slug]}
                       </div>
                     </div>
@@ -179,9 +179,9 @@ export const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.8 }}
-              className="mt-5 flex items-center justify-between"
+              className="mt-6 flex items-center justify-between"
             >
-              <span className="text-[10px] uppercase tracking-[0.22em] text-slate-brand">
+              <span className="text-[11px] uppercase tracking-[0.22em] text-slate-brand">
                 Deployable in isolation or as one stack
               </span>
               <Link
@@ -193,11 +193,11 @@ export const Hero = () => {
                     window.__lenis.scrollTo(el, { duration: 1.6 });
                   else el?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="inline-flex items-center gap-1.5 text-[11px] font-medium text-ink hover:text-orange-brand transition-colors"
+                className="inline-flex items-center gap-1.5 text-[12px] font-medium text-ink hover:text-orange-brand transition-colors"
                 data-testid="hero-pillar-explore"
               >
                 Explore
-                <ArrowUpRight className="w-3.5 h-3.5" />
+                <ArrowUpRight className="w-4 h-4" />
               </Link>
             </motion.div>
           </motion.div>
