@@ -44,6 +44,11 @@ export default function PillarDetail() {
             <span className="text-[10px] uppercase tracking-[0.24em] text-slate-brand">
               Pillar · {pillar.tag}
             </span>
+            {pillar.formalName && (
+              <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink mt-1">
+                {pillar.formalName}
+              </span>
+            )}
           </div>
         </div>
 
@@ -148,7 +153,114 @@ export default function PillarDetail() {
         </div>
       </section>
 
-      {/* How it deploys */}
+      {/* Components — Key modules from infographic */}
+      {pillar.components && pillar.components.length > 0 && (
+        <section className="relative bg-paper text-ink py-24 md:py-32 px-6 md:px-10 lg:px-14 border-t border-line">
+          <div className="flex items-baseline gap-5 mb-10">
+            <span className="font-editorial italic text-[52px] md:text-[64px] leading-none text-orange-brand">
+              §
+            </span>
+            <div className="flex flex-col">
+              <span className="text-[10px] uppercase tracking-[0.24em] text-slate-brand">
+                {pillar.componentsLabel || "Components"}
+              </span>
+              <span className="font-mono text-[13px] uppercase tracking-[0.2em] text-ink mt-1">
+                What ships inside
+              </span>
+            </div>
+            <span className="hidden md:block flex-1 h-px bg-ink/15 ml-6" />
+          </div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="font-editorial text-[8vw] md:text-[5vw] lg:text-[3.8vw] leading-[0.95] tracking-[-0.03em] max-w-5xl"
+          >
+            The modules that make{" "}
+            <span className="italic font-editorial-soft text-orange-brand">
+              {pillar.title}
+            </span>{" "}
+            operational on day one.
+          </motion.h2>
+
+          <div className="mt-14 border-t border-l border-ink/15 grid md:grid-cols-2 lg:grid-cols-3">
+            {pillar.components.map((c, i) => (
+              <motion.article
+                key={c.code}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{
+                  duration: 0.6,
+                  delay: (i % 3) * 0.08,
+                }}
+                className="group border-r border-b border-ink/15 p-6 md:p-8 flex flex-col gap-4 bg-paper hover:bg-cream transition-colors min-h-[220px]"
+                data-testid={`pillar-module-${c.code}`}
+              >
+                <div className="flex items-center justify-between">
+                  <div
+                    className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                      i % 2 === 0
+                        ? "bg-ink text-paper"
+                        : "bg-orange-brand text-paper"
+                    }`}
+                  >
+                    <span className="font-editorial italic text-[18px] leading-none">
+                      {c.code}
+                    </span>
+                  </div>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-slate-brand">
+                    Module {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <h3 className="font-editorial text-[22px] md:text-[24px] leading-[1.05] tracking-tight">
+                  {c.title}
+                </h3>
+                <p className="text-[13.5px] leading-[1.55] text-ink/70">
+                  {c.body}
+                </p>
+              </motion.article>
+            ))}
+          </div>
+
+          {(pillar.alignments || pillar.footnote) && (
+            <div className="mt-12 grid md:grid-cols-12 gap-6 items-center">
+              {pillar.alignments && (
+                <div className="md:col-span-6">
+                  <div className="text-[10px] uppercase tracking-[0.22em] text-slate-brand mb-3">
+                    Aligned with
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {pillar.alignments.map((a) => (
+                      <span
+                        key={a}
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-ink/20 text-[12px] font-mono uppercase tracking-[0.16em] text-ink"
+                      >
+                        <Check
+                          className="w-3 h-3 text-orange-brand"
+                          strokeWidth={2.6}
+                        />
+                        {a}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {pillar.footnote && (
+                <div
+                  className={`${
+                    pillar.alignments ? "md:col-span-6 md:text-right" : "md:col-span-12"
+                  } text-[14px] italic font-editorial-soft text-ink/75 leading-[1.55]`}
+                >
+                  {pillar.footnote}
+                </div>
+              )}
+            </div>
+          )}
+        </section>
+      )}
       <section className="relative bg-paper text-ink py-24 md:py-32 px-6 md:px-10 lg:px-14 border-t border-line">
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
