@@ -204,27 +204,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Bottom marker */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.8 }}
-        className="relative z-10 mt-16 md:mt-24 flex items-end justify-between gap-6"
-      >
-        <div className="flex items-center gap-3 text-[11px] font-mono uppercase tracking-[0.22em] text-slate-brand">
-          <span>Scroll</span>
-          <span className="w-10 h-px bg-slate-brand/50" />
-          <span>Ch. 01 → Ch. 07</span>
-        </div>
-        <div className="hidden md:block text-right">
-          <div className="text-[10px] uppercase tracking-[0.22em] text-slate-brand mb-1">
-            Group operating standard
-          </div>
-          <div className="font-editorial italic text-2xl leading-none">
-            One record per student. Forever.
-          </div>
-        </div>
-      </motion.div>
+      {/* Bottom marker removed per direction */}
     </section>
   );
 };
