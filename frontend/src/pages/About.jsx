@@ -180,7 +180,7 @@ export default function About() {
           </span>
         </h2>
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-5xl">
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-2xl">
           {leadership.map((m, i) => (
             <motion.div
               key={m.name}
