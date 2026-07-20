@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { LOGO_URL } from "../data/brand";
 
 export const Footer = () => {
   return (
@@ -31,6 +32,14 @@ export const Footer = () => {
 
       <div className="px-6 md:px-12 py-14 md:py-16 grid md:grid-cols-12 gap-10">
         <div className="md:col-span-4">
+          <div className="inline-block bg-paper p-3 mb-6 rounded-sm">
+            <img
+              src={LOGO_URL}
+              alt="Khaitan EduOps"
+              className="h-10 w-auto block"
+              draggable={false}
+            />
+          </div>
           <div className="text-[10px] uppercase tracking-[0.22em] text-paper/50 mb-4">
             The Company
           </div>

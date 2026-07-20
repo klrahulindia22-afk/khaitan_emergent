@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import { LOGO_URL } from "../data/brand";
 
 const manifesto = [
   { label: "Problem", section: "problem" },
@@ -105,15 +106,14 @@ export const Sidebar = () => {
             className="flex items-center gap-2.5 group"
             data-testid="topbar-logo"
           >
-            <LogoMark />
-            <div className="leading-tight hidden sm:block">
-              <div className="font-editorial text-[19px] tracking-tight text-ink">
-                Khaitan
-              </div>
-              <div className="text-[9px] uppercase tracking-[0.22em] text-slate-brand -mt-0.5">
-                EduOps · Est. 2024
-              </div>
-            </div>
+            <img
+              src={LOGO_URL}
+              alt="Khaitan EduOps"
+              className={`w-auto transition-all duration-500 ${
+                condensed ? "h-8 md:h-9" : "h-10 md:h-11"
+              }`}
+              draggable={false}
+            />
           </Link>
 
           {/* Center — Manifesto pill */}
@@ -304,14 +304,10 @@ const MobileNav = ({ active, onNav, location, setOpen }) => (
 );
 
 const LogoMark = () => (
-  <div className="relative w-8 h-8 shrink-0" aria-hidden>
-    <div className="absolute inset-0 rounded-full bg-ink" />
-    <div className="absolute inset-[3px] rounded-full border border-paper/30" />
-    <div className="absolute inset-0 flex items-center justify-center">
-      <span className="text-paper font-editorial text-[15px] leading-none italic">
-        K
-      </span>
-    </div>
-    <div className="absolute -bottom-0.5 -right-0.5 w-2 h-2 rounded-full bg-orange-brand" />
-  </div>
+  <img
+    src={LOGO_URL}
+    alt="Khaitan EduOps"
+    className="h-8 w-auto"
+    draggable={false}
+  />
 );

@@ -15,6 +15,8 @@
         --cream: #faf7f0;
         --orange: #ff5c1f;
         --orange-bright: #ff7a3d;
+        --electric: #3b4eff;
+        --electric-bright: #5568ff;
         --slate: #5b6472;
         --line: rgba(10, 22, 40, 0.12);
         --line-soft: rgba(10, 22, 40, 0.06);
@@ -104,6 +106,12 @@
     }
     .text-orange-brand {
         color: var(--orange);
+    }
+    .text-electric {
+        color: var(--electric);
+    }
+    .bg-electric {
+        background-color: var(--electric);
     }
     .text-slate-brand {
         color: var(--slate);

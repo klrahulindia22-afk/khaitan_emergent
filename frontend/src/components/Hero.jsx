@@ -3,9 +3,9 @@ import { useRef } from "react";
 import { ArrowUpRight, Circle } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const line1 = ["Person-dependent", "institutions,"];
-const line2 = ["transitioned", "into"];
-const line3 = ["system-driven", "organisations."];
+const line1 = ["Schools", "deserve"];
+const line2 = ["operating", "systems,"];
+const line3 = ["not", "just", "software."];
 
 const wordVariants = {
   hidden: { y: "110%" },
@@ -86,13 +86,12 @@ export const Hero = () => {
               words={line2}
               baseIndex={line1.length}
               italic
-              accent
+              electric
             />
             <br />
             <RevealLine
               words={line3}
               baseIndex={line1.length + line2.length}
-              italicLast
             />
           </h1>
 
@@ -102,10 +101,9 @@ export const Hero = () => {
             transition={{ duration: 0.9, delay: 1.4, ease: [0.7, 0, 0.2, 1] }}
             className="mt-10 md:mt-14 max-w-xl text-[16px] md:text-[17px] leading-[1.55] text-ink/75"
           >
-            Khaitan EduOps is not an EdTech. Not an ERP. We are an Education
-            Management Operating Company — the resident operator that installs
-            playbooks, reviews and the technology to make outcomes reproducible
-            across every classroom, every campus, every year.
+            Khaitan EduOps is an Education Management Operating Company that
+            designs, implements, and continuously improves the complete
+            institutional operating system for K–12 schools.
           </motion.p>
 
           <motion.div
@@ -199,11 +197,16 @@ export const Hero = () => {
   );
 };
 
-const RevealLine = ({ words, baseIndex, italic, italicLast, accent }) => (
+const RevealLine = ({ words, baseIndex, italic, italicLast, accent, electric }) => (
   <span className="block">
     {words.map((w, i) => {
       const isLast = i === words.length - 1;
       const isItalic = italic || (italicLast && isLast);
+      const colorClass = electric
+        ? "text-electric"
+        : accent && isLast
+          ? "text-orange-brand"
+          : "";
       return (
         <span key={w + i} className="reveal-mask mr-[0.24em]">
           <motion.span
@@ -213,7 +216,7 @@ const RevealLine = ({ words, baseIndex, italic, italicLast, accent }) => (
             custom={baseIndex + i}
             className={`reveal-word ${
               isItalic ? "italic font-editorial-soft" : ""
-            } ${accent && isLast ? "text-orange-brand" : ""}`}
+            } ${colorClass}`}
           >
             {w}
           </motion.span>
