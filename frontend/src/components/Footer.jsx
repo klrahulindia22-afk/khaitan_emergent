@@ -26,7 +26,7 @@ export const Footer = () => {
               <span>Khaitan</span>{" "}
               <span className="text-orange-brand">
                 EduOps{" "}
-                <span className="text-[75%]">Pvt. Ltd.</span>
+                <span className="text-[25%]">Pvt. Ltd.</span>
               </span>
             </motion.h2>
           </div>
