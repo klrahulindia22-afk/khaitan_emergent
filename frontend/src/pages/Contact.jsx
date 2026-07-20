@@ -6,7 +6,7 @@ import { Footer } from "../components/Footer";
 export default function Contact() {
   return (
     <main className="relative" data-testid="contact-page">
-      <section className="relative pt-28 md:pt-32 lg:pt-36 px-6 md:px-10 lg:px-14 pb-16 md:pb-24">
+      <section className="relative pt-40 md:pt-44 lg:pt-48 px-6 md:px-10 lg:px-14 pb-16 md:pb-24">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}

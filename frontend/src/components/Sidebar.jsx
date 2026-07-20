@@ -96,7 +96,7 @@ export const Sidebar = () => {
       >
         <div
           className={`flex items-center justify-between px-5 md:px-8 lg:px-10 transition-all duration-500 ${
-            condensed ? "py-3" : "py-5"
+            condensed ? "py-2" : "py-3"
           }`}
         >
           {/* Left — Logo */}
@@ -110,7 +110,7 @@ export const Sidebar = () => {
               src={LOGO_URL}
               alt="Khaitan EduOps"
               className={`w-auto transition-all duration-500 ${
-                condensed ? "h-8 md:h-9" : "h-10 md:h-11"
+                condensed ? "h-14 md:h-16" : "h-24 md:h-28 lg:h-32"
               }`}
               draggable={false}
             />

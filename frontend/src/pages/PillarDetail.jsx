@@ -25,7 +25,7 @@ export default function PillarDetail() {
       {/* Hero */}
       <section
         ref={ref}
-        className="relative pt-28 md:pt-32 lg:pt-36 px-6 md:px-10 lg:px-14 pb-16 md:pb-24 overflow-hidden"
+        className="relative pt-40 md:pt-44 lg:pt-48 px-6 md:px-10 lg:px-14 pb-16 md:pb-24 overflow-hidden"
       >
         <Link
           to="/#pillars"
