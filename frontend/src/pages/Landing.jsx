@@ -8,6 +8,7 @@ import { SevenPillars } from "../components/SevenPillars";
 import { BusinessModel } from "../components/BusinessModel";
 import { OurClients } from "../components/OurClients";
 import { StrategicAdvantage } from "../components/StrategicAdvantage";
+import { Organisation } from "../components/Organisation";
 import { TheResult } from "../components/TheResult";
 import { CTASection } from "../components/CTASection";
 import { Footer } from "../components/Footer";
@@ -25,6 +26,7 @@ export default function Landing() {
       <BusinessModel />
       <OurClients />
       <StrategicAdvantage />
+      <Organisation />
       <TheResult />
       <CTASection />
       <Footer />
