@@ -32,7 +32,7 @@ const leadership = [
   {
     name: "Vedant Khaitan",
     role: "Founder & Director",
-    img: "https://customer-assets-gfyr7b9c.emergentagent.net/job_consistency-platform/artifacts/nkk7gpqq_Vedant%20Khaitan.png",
+    img: "https://customer-assets-gfyr7b9c.emergentagent.net/job_consistency-platform/artifacts/p09qbskb_VK%20Pic%207.webp",
     bio: "Coming from a distinguished background of leading lawyers, industrialists and educationists, Mr. Khaitan represents the best of knowledge, entrepreneurship and dynamism. The Khaitan family runs numerous schools that are beacons of excellence — The Khaitan School (Noida), Khaitan Public School (Ghaziabad), Khaitan Preschool (Noida), BDM International School (Kolkata), Indus Valley World School (Kolkata) and Sunny Preparatory School (Kolkata) among them.\n\nMr. Khaitan is an alumnus of Modern School, Vasant Vihar, and a Mechanical Engineer from The University of Michigan, Ann Arbor, USA. Inducted into the management of The Khaitan School in 2008, he has played key roles in several of the institution's milestones, including founding the Khaitan Preschool in 2013 — since recognised as a leading educational institution in Noida.\n\nHe helped set up the Gautam Budh Nagar Chapter of the Independent School Federation of India and co-founded the K12 education chapter of FICCI ARISE, the education policy advocacy body — where he currently chairs the North Committee and the Membership Committee. He has also completed the Business Mastery Programme and an intensive course on Digital Marketing at Business Coaching India by Mr. Rahul Jain.",
   },
   {
