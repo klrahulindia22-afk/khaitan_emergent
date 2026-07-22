@@ -90,143 +90,104 @@ export const Organisation = () => {
     >
       <ChapterHead num="09" label="Our Organisation" />
 
-      <div className="mt-6 grid lg:grid-cols-12 gap-6 md:gap-10 items-end">
-        <div className="lg:col-span-8">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.9 }}
-            className="font-editorial text-[9vw] md:text-[6.2vw] lg:text-[4.6vw] leading-[0.9] tracking-[-0.035em] max-w-5xl"
-          >
-            Seven divisions.{" "}
-            <span className="italic font-editorial-soft text-orange-brand">
-              One operating company.
-            </span>
-          </motion.h2>
-          <p className="mt-8 max-w-2xl text-[16px] md:text-[17px] leading-[1.6] text-ink/70">
-            Institutionalising excellence. Driving transformation. Creating
-            future-ready schools. Our organisation is engineered as an
-            Education Management Operating Company — not an EdTech, not an ERP,
-            not a consultancy.
-          </p>
-        </div>
-
-        {/* Purpose card */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.8 }}
-          className="lg:col-span-4 bg-ink text-paper p-7 md:p-8 relative overflow-hidden"
-        >
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -bottom-14 -right-6 font-editorial italic text-[180px] leading-none text-paper/[0.05] select-none"
-          >
-            ★
-          </div>
-          <div className="relative z-10 flex items-center gap-3 mb-4">
-            <div className="w-11 h-11 rounded-full bg-orange-brand flex items-center justify-center">
-              <Target className="w-5 h-5" strokeWidth={1.6} />
-            </div>
-            <div className="text-[10px] uppercase tracking-[0.22em] text-paper/60">
-              Our Purpose
-            </div>
-          </div>
-          <p className="relative z-10 font-editorial text-[19px] md:text-[20px] leading-[1.35] tracking-tight">
-            To build{" "}
-            <span className="italic font-editorial-soft text-orange-brand">
-              professionally managed, future-ready schools
-            </span>{" "}
-            through systems, governance, technology, capability building and
-            implementation excellence.
-          </p>
-        </motion.div>
-      </div>
-
-      {/* Executive leadership badge */}
-      <motion.div
+      <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-        className="mt-16 md:mt-20 flex items-center justify-center"
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.9 }}
+        className="mt-6 font-editorial text-[9vw] md:text-[6.2vw] lg:text-[4.6vw] leading-[0.9] tracking-[-0.035em] max-w-5xl"
       >
-        <div className="inline-flex items-center gap-3 px-6 py-3 bg-ink text-paper rounded-full">
-          <Crown className="w-4 h-4 text-orange-brand" strokeWidth={1.6} />
-          <span className="font-mono text-[11px] uppercase tracking-[0.22em]">
-            Executive Leadership Team
-          </span>
-        </div>
-      </motion.div>
+        Seven divisions.{" "}
+        <span className="italic font-editorial-soft text-orange-brand">
+          One operating company.
+        </span>
+      </motion.h2>
 
-      {/* Connector line */}
-      <div className="mt-6 flex justify-center">
-        <div className="w-px h-10 bg-ink/20" />
+      <div className="mt-10 grid lg:grid-cols-12 gap-8">
+        <p className="lg:col-span-6 text-[16px] md:text-[17px] leading-[1.6] text-ink/70">
+          Institutionalising excellence. Driving transformation. Creating
+          future-ready schools. Our organisation is engineered as an Education
+          Management Operating Company — not an EdTech, not an ERP, not a
+          consultancy.
+        </p>
+        <div className="lg:col-span-6 flex items-start gap-4 lg:pl-6 lg:border-l border-ink/15">
+          <div className="w-10 h-10 rounded-full bg-orange-brand text-paper flex items-center justify-center shrink-0 mt-1">
+            <Target className="w-4 h-4" strokeWidth={1.6} />
+          </div>
+          <div>
+            <div className="text-[10px] uppercase tracking-[0.22em] text-slate-brand mb-2">
+              Our Purpose
+            </div>
+            <p className="font-editorial text-[19px] md:text-[21px] leading-[1.35] tracking-tight">
+              To build{" "}
+              <span className="italic font-editorial-soft text-orange-brand">
+                professionally managed, future-ready schools
+              </span>{" "}
+              through systems, governance, technology, capability building and
+              implementation excellence.
+            </p>
+          </div>
+        </div>
       </div>
 
-      {/* 7 Division cards */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
-        {divisions.map((d, i) => {
-          const isOrange = d.accent === "orange";
-          const Icon = d.icon;
-          return (
-            <motion.article
-              key={d.n}
-              initial={{ opacity: 0, y: 30 }}
+      {/* Org Chart flow diagram */}
+      <div
+        className="mt-16 md:mt-20 relative"
+        data-testid="org-chart"
+      >
+        <div className="text-[10px] uppercase tracking-[0.22em] text-slate-brand mb-6 font-mono">
+          Fig · 09 · The reporting structure
+        </div>
+
+        <div className="bg-paper border border-line p-6 md:p-10 relative overflow-x-auto">
+          {/* Top — Executive Leadership Team */}
+          <div className="flex justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{
-                duration: 0.6,
-                delay: (i % 4) * 0.08,
-                ease: [0.7, 0, 0.2, 1],
-              }}
-              className={`group relative flex flex-col gap-4 p-6 md:p-7 border transition-colors min-h-[280px] ${
-                isOrange
-                  ? "bg-orange-brand text-paper border-transparent"
-                  : "bg-paper border-line hover:bg-cream"
-              }`}
-              data-testid={`division-${d.n}`}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center gap-3 px-6 py-3 bg-ink text-paper rounded-full"
             >
-              <div className="flex items-center justify-between">
-                <span
-                  className={`font-mono text-[11px] uppercase tracking-[0.22em] ${
-                    isOrange ? "text-paper/70" : "text-slate-brand"
-                  }`}
-                >
-                  Div · {d.n}
-                </span>
-                <div
-                  className={`w-10 h-10 rounded-full border flex items-center justify-center ${
-                    isOrange
-                      ? "border-paper/30"
-                      : "border-ink/20"
-                  }`}
-                >
-                  <Icon className="w-4 h-4" strokeWidth={1.5} />
+              <Crown className="w-4 h-4 text-orange-brand" strokeWidth={1.6} />
+              <span className="font-mono text-[11px] uppercase tracking-[0.22em]">
+                Executive Leadership Team
+              </span>
+            </motion.div>
+          </div>
+
+          {/* Vertical connector down from ELT */}
+          <div className="flex justify-center">
+            <div className="w-0.5 h-12 bg-ink" />
+          </div>
+
+          {/* Horizontal bar spanning 7 columns */}
+          <div className="hidden lg:block relative h-0">
+            <div className="absolute left-[7.14%] right-[7.14%] top-0 h-0.5 bg-ink" />
+          </div>
+
+          {/* Division nodes with drop lines (desktop grid) */}
+          <div className="mt-0 hidden lg:grid grid-cols-7 gap-3 relative">
+            {divisions.map((d, i) => (
+              <div key={d.n} className="flex flex-col items-center">
+                <div className="w-0.5 h-12 bg-ink" />
+                <DivisionNode d={d} i={i} />
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile stacked — same nodes, single column */}
+          <div className="lg:hidden flex flex-col items-center gap-3 mt-2">
+            {divisions.map((d, i) => (
+              <div key={d.n} className="flex flex-col items-center w-full">
+                <div className="w-0.5 h-6 bg-ink" />
+                <div className="w-full max-w-sm">
+                  <DivisionNode d={d} i={i} mobile />
                 </div>
               </div>
-              <h3 className="font-editorial text-[22px] md:text-[23px] leading-[1.05] tracking-tight">
-                {d.title}
-              </h3>
-              <div
-                className={`text-[10.5px] uppercase tracking-[0.2em] ${
-                  isOrange ? "text-paper/70" : "text-orange-brand"
-                }`}
-              >
-                {d.dept}
-              </div>
-              <p
-                className={`text-[13px] leading-[1.55] ${
-                  isOrange ? "text-paper/85" : "text-ink/70"
-                }`}
-              >
-                {d.body}
-              </p>
-            </motion.article>
-          );
-        })}
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Our Enablers */}
@@ -335,5 +296,53 @@ export const Organisation = () => {
         </div>
       </motion.div>
     </section>
+  );
+};
+
+const DivisionNode = ({ d, i, mobile }) => {
+  const isOrange = d.accent === "orange";
+  const Icon = d.icon;
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.1 + i * 0.05 }}
+      className={`w-full flex flex-col gap-2 p-4 md:p-4 border transition-colors ${
+        mobile ? "min-h-0" : "min-h-[190px]"
+      } ${
+        isOrange
+          ? "bg-orange-brand text-paper border-transparent"
+          : "bg-cream border-line hover:bg-ink hover:text-paper"
+      }`}
+      data-testid={`division-node-${d.n}`}
+    >
+      <div className="flex items-center justify-between">
+        <span
+          className={`font-mono text-[10px] uppercase tracking-[0.22em] ${
+            isOrange ? "text-paper/70" : "text-slate-brand"
+          }`}
+        >
+          {d.n}
+        </span>
+        <div
+          className={`w-8 h-8 rounded-full flex items-center justify-center ${
+            isOrange ? "bg-paper/15" : "bg-ink/5"
+          }`}
+        >
+          <Icon className="w-3.5 h-3.5" strokeWidth={1.5} />
+        </div>
+      </div>
+      <h4 className="font-editorial text-[15px] md:text-[16px] leading-[1.05] tracking-tight">
+        {d.title}
+      </h4>
+      <div
+        className={`text-[9.5px] uppercase tracking-[0.16em] leading-[1.35] ${
+          isOrange ? "text-paper/80" : "text-orange-brand"
+        }`}
+      >
+        {d.dept}
+      </div>
+    </motion.article>
   );
 };
