@@ -57,7 +57,7 @@ const fixSteps = [
     n: "→",
     icon: ScanEye,
     label: "Generate",
-    body: "AAP, APP and lesson plans built with one click.",
+    body: "PRP (Prerequisite Revision Plan), AAP (Annual Academic Plan), APP (Annual Pedagogical Plan), Lesson Plans, Gap Analysis Report, Improvement Plan, Class Log Book and PTM Summary Report — all built with one click.",
   },
   {
     n: "→",
