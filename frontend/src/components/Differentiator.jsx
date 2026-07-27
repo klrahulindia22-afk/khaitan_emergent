@@ -444,9 +444,9 @@ export const Differentiator = () => {
             <div className="text-[10px] uppercase tracking-[0.22em] text-slate-brand mb-3">
               Our ambition
             </div>
-            <blockquote className="font-logo text-[7vw] md:text-[4.4vw] lg:text-[3.4vw] leading-[1.05] tracking-[-0.02em] max-w-5xl">
+            <blockquote className="font-editorial text-[7vw] md:text-[4.4vw] lg:text-[3.4vw] leading-[1.05] tracking-[-0.025em] max-w-5xl">
               Not to sell products or services. But to become the{" "}
-              <span className="text-orange-brand">
+              <span className="italic font-editorial-soft text-orange-brand">
                 operating infrastructure
               </span>{" "}
               that schools depend upon to function, grow and scale sustainably.
@@ -535,7 +535,7 @@ const FlowColumn = ({ kicker, title, steps, endLine, tone }) => {
 
 const PromiseChip = ({ k, v }) => (
   <div className="flex flex-col">
-    <span className="font-logo text-[22px] md:text-[24px] leading-[1.15] tracking-[-0.015em]">
+    <span className="font-editorial text-[24px] md:text-[26px] leading-[1.05] tracking-tight">
       {k}
     </span>
     <span className="text-[13px] text-ink/65 mt-2 leading-[1.5]">{v}</span>
