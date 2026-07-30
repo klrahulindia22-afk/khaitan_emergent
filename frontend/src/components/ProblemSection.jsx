@@ -232,6 +232,28 @@ export const ProblemSection = () => {
             The Academic OS replaces manual discretion
           </span>
         </div>
+
+        {/* Preamble — AOS philosophy */}
+        <div className="mb-12 grid md:grid-cols-12 gap-8 items-start">
+          <div className="md:col-span-1 flex md:justify-end">
+            <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-orange-brand pt-1">
+              AOS
+            </span>
+          </div>
+          <div className="md:col-span-7">
+            <p className="font-editorial-soft italic text-[19px] md:text-[22px] leading-[1.45] text-ink">
+              Most schools have calendars, lesson plans and assessments. Very
+              few have a system that ensures every chapter is actually taught,
+              assessed, analysed, improved and communicated to parents.
+            </p>
+          </div>
+          <div className="md:col-span-4 text-[14px] leading-[1.65] text-ink/70">
+            The Academic Operating System connects the entire academic journey
+            — annual planning to classroom execution, student learning, teacher
+            accountability and leadership insights — in one workflow.
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-3 gap-5 md:gap-6">
           {fixSteps.map((s, i) => (
             <motion.div
@@ -264,6 +286,33 @@ export const ProblemSection = () => {
           Outcome — Consistent academic quality · Scalable · Measurable ·
           Sustainable
         </p>
+
+        {/* Chapter accountability chain */}
+        <div className="mt-10 pt-8 border-t border-ink/15">
+          <div className="text-[10px] uppercase tracking-[0.22em] text-slate-brand mb-4">
+            Every chapter has accountability
+          </div>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+            {["Teach", "Assess", "Analyse", "Improve", "Recover", "Communicate"].map(
+              (s, i, arr) => (
+                <span key={s} className="flex items-center gap-3">
+                  <span className="font-editorial text-[22px] md:text-[26px] leading-none italic text-ink">
+                    {s}
+                  </span>
+                  {i < arr.length - 1 && (
+                    <span className="text-orange-brand text-[18px] leading-none">
+                      →
+                    </span>
+                  )}
+                </span>
+              )
+            )}
+          </div>
+          <p className="mt-4 text-[13px] italic font-editorial-soft text-ink/70">
+            Nothing gets missed. Leadership sees reality — not a month-end
+            report.
+          </p>
+        </div>
       </motion.div>
     </section>
   );
