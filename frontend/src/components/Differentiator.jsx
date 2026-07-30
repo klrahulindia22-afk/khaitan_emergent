@@ -24,6 +24,7 @@ import {
   Puzzle,
 } from "lucide-react";
 import { ChapterHead } from "./ProblemSection";
+import { LOGO_URL } from "../data/brand";
 
 const categories = [
   {
@@ -246,14 +247,14 @@ export const Differentiator = () => {
             <div className="absolute inset-0 border border-ink/10 rounded-full" />
             <div className="absolute inset-[10%] border border-dashed border-ink/15 rounded-full" />
             <div className="absolute inset-[24%] border border-ink/10 rounded-full" />
-            {/* Center */}
-            <div className="absolute inset-[38%] rounded-full bg-ink text-paper flex flex-col items-center justify-center">
-              <span className="font-editorial text-[10px] leading-none italic">
-                Khaitan
-              </span>
-              <span className="font-mono text-[8px] uppercase tracking-[0.18em] mt-0.5">
-                EduOps
-              </span>
+            {/* Center — Logo */}
+            <div className="absolute inset-[30%] rounded-full bg-paper flex items-center justify-center shadow-[0_1px_0_0_rgba(10,22,40,0.06)] p-3">
+              <img
+                src={LOGO_URL}
+                alt="Khaitan EduOps"
+                className="w-full h-full object-contain"
+                draggable={false}
+              />
             </div>
             {/* Stakeholder dots on ring */}
             {stakeholders.map((s, i) => {

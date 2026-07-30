@@ -97,9 +97,9 @@ export const ComplianceGap = () => {
       <div className="mt-12 md:mt-14 grid md:grid-cols-12 gap-8 items-start">
         <div className="md:col-span-6">
           <p className="text-[16px] md:text-[17px] leading-[1.6] text-ink/75 max-w-xl">
-            A mid-size school runs on more than{" "}
+            A mid-size school runs on{" "}
             <strong className="text-ink font-semibold">
-              1,200 daily micro-decisions
+              thousands of daily micro-decisions
             </strong>{" "}
             — attendance, lesson delivery, safety, finance, communications,
             compliance. Human oversight is linear. Volume is not.
@@ -249,7 +249,7 @@ export const ComplianceGap = () => {
           Operating principle
         </div>
         <blockquote className="font-editorial text-[28px] md:text-[38px] italic font-editorial-soft leading-[1.1] tracking-tight">
-          “What you cannot review, you cannot run.”
+          “What Gets Reviewed, Gets Done.”
         </blockquote>
       </div>
     </section>

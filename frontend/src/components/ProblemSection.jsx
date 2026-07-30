@@ -51,7 +51,7 @@ const fixSteps = [
     n: "→",
     icon: Zap,
     label: "Move",
-    body: "From person-dependent to process-dependent.",
+    body: "From person-dependent to process-dependent — Compliance by Design.",
   },
   {
     n: "→",
