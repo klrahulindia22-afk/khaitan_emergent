@@ -47,7 +47,7 @@ export const AOS = () => {
   return (
     <section
       id="aos"
-      className="relative bg-paper text-ink py-24 md:py-32 px-6 md:px-10 lg:px-14 border-t border-line overflow-hidden"
+      className="relative bg-paper text-ink pt-6 md:pt-10 pb-24 md:pb-32 px-6 md:px-10 lg:px-14 overflow-hidden"
       data-testid="aos-section"
     >
       {/* Section head */}

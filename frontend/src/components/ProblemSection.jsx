@@ -71,7 +71,7 @@ export const ProblemSection = () => {
   return (
     <section
       id="problem"
-      className="relative bg-paper text-ink py-24 md:py-36 px-6 md:px-10 lg:px-14 border-t border-line overflow-hidden"
+      className="relative bg-paper text-ink pt-24 md:pt-36 pb-12 md:pb-16 px-6 md:px-10 lg:px-14 border-t border-line overflow-hidden"
       data-testid="problem-section"
     >
       <ChapterHead num="01" label="Problem · Academic Inconsistency" />
