@@ -286,33 +286,6 @@ export const ProblemSection = () => {
           Outcome — Consistent academic quality · Scalable · Measurable ·
           Sustainable
         </p>
-
-        {/* Chapter accountability chain */}
-        <div className="mt-10 pt-8 border-t border-ink/15">
-          <div className="text-[10px] uppercase tracking-[0.22em] text-slate-brand mb-4">
-            Every chapter has accountability
-          </div>
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-            {["Teach", "Assess", "Analyse", "Improve", "Recover", "Communicate"].map(
-              (s, i, arr) => (
-                <span key={s} className="flex items-center gap-3">
-                  <span className="font-editorial text-[22px] md:text-[26px] leading-none italic text-ink">
-                    {s}
-                  </span>
-                  {i < arr.length - 1 && (
-                    <span className="text-orange-brand text-[18px] leading-none">
-                      →
-                    </span>
-                  )}
-                </span>
-              )
-            )}
-          </div>
-          <p className="mt-4 text-[13px] italic font-editorial-soft text-ink/70">
-            Nothing gets missed. Leadership sees reality — not a month-end
-            report.
-          </p>
-        </div>
       </motion.div>
     </section>
   );
