@@ -1,5 +1,6 @@
 import { Hero } from "../components/Hero";
 import { ProblemSection } from "../components/ProblemSection";
+import { AOS } from "../components/AOS";
 import { PromoterPain } from "../components/PromoterPain";
 import { Marquee } from "../components/Marquee";
 import { ComplianceGap } from "../components/ComplianceGap";
@@ -18,6 +19,7 @@ export default function Landing() {
     <main className="relative" data-testid="landing-page">
       <Hero />
       <ProblemSection />
+      <AOS />
       <PromoterPain />
       <Marquee variant="light" />
       <ComplianceGap />
