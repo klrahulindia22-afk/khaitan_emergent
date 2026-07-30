@@ -248,7 +248,7 @@ export const Differentiator = () => {
             <div className="absolute inset-[10%] border border-dashed border-ink/15 rounded-full" />
             <div className="absolute inset-[24%] border border-ink/10 rounded-full" />
             {/* Center — Logo */}
-            <div className="absolute inset-[30%] rounded-full bg-paper flex items-center justify-center shadow-[0_1px_0_0_rgba(10,22,40,0.06)] p-3">
+            <div className="absolute inset-[44%] rounded-full bg-paper flex items-center justify-center shadow-[0_1px_0_0_rgba(10,22,40,0.06)] p-1.5">
               <img
                 src={LOGO_URL}
                 alt="Khaitan EduOps"
