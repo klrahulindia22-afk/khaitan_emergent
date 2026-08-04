@@ -44,7 +44,14 @@ Secondary: Heads of School, Coordinators, EduOps buyers.
   - GET /api/health, GET /api/
   - MongoDB storage in `contact_submissions` and `demo_submissions`
 
+## Implemented (Feb 2026 — v2)
+- Industry Leaders section: 2x2 editorial grid with dummy video players +
+  expert names, titles, italic pull-quotes and summaries. Wired into Landing.
+  File: `/app/frontend/src/components/IndustryLeaders.jsx`. Visually verified
+  via screenshot — matches editorial design language.
+
 ## Backlog / Next
+- P1: Replace Industry Leaders dummy videos + expert content with real assets
 - P1: Wire real email notifications (Resend) on new submissions
 - P1: Admin dashboard to review submissions
 - P2: Add Case Studies / Group Portfolio page
