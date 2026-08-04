@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Play } from "lucide-react";
+import { Play, Volume2, VolumeX } from "lucide-react";
+import { useRef, useState } from "react";
 
 const experts = [
   {
@@ -36,6 +37,122 @@ const experts = [
   },
 ];
 
+const VoiceCard = ({ e, i }) => {
+  const videoRef = useRef(null);
+  const [engaged, setEngaged] = useState(false); // user has clicked (unmute + native controls)
+  const [previewing, setPreviewing] = useState(false); // hover-muted preview playing
+
+  const handleEnter = () => {
+    if (engaged) return;
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    setPreviewing(true);
+    const p = v.play();
+    if (p && typeof p.catch === "function") p.catch(() => setPreviewing(false));
+  };
+
+  const handleLeave = () => {
+    if (engaged) return;
+    const v = videoRef.current;
+    setPreviewing(false);
+    if (!v) return;
+    v.pause();
+    v.currentTime = 0;
+  };
+
+  const handleEngage = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = false;
+    v.play().catch(() => {});
+    setEngaged(true);
+    setPreviewing(false);
+  };
+
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.7, delay: (i % 2) * 0.08 }}
+      className="group flex flex-col bg-paper border border-line overflow-hidden"
+      data-testid={`industry-leader-${i}`}
+    >
+      {/* Video player */}
+      <div
+        className="relative aspect-video bg-ink cursor-pointer"
+        onMouseEnter={handleEnter}
+        onMouseLeave={handleLeave}
+        onClick={engaged ? undefined : handleEngage}
+        data-testid={`industry-leader-video-${i}`}
+      >
+        <video
+          ref={videoRef}
+          controls={engaged}
+          poster={e.poster}
+          className="w-full h-full object-cover"
+          preload="metadata"
+          playsInline
+          loop={!engaged}
+        >
+          <source src={e.video} type="video/mp4" />
+        </video>
+
+        {/* Kicker */}
+        <div className="absolute top-3 left-3 bg-paper text-ink px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] font-mono pointer-events-none z-10">
+          0{i + 1} · Voice
+        </div>
+
+        {/* Play badge — only before user engages */}
+        {!engaged && (
+          <div
+            className={`absolute top-3 right-3 w-9 h-9 rounded-full bg-orange-brand text-paper flex items-center justify-center pointer-events-none z-10 transition-opacity duration-300 ${
+              previewing ? "opacity-0" : "opacity-100"
+            }`}
+          >
+            <Play className="w-4 h-4 fill-current" strokeWidth={0} />
+          </div>
+        )}
+
+        {/* Muted-preview indicator */}
+        {previewing && !engaged && (
+          <div className="absolute bottom-3 left-3 flex items-center gap-2 bg-ink/80 text-paper px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] font-mono pointer-events-none z-10 backdrop-blur-sm">
+            <VolumeX className="w-3 h-3" />
+            <span>Muted preview · click to unmute</span>
+          </div>
+        )}
+
+        {/* First-touch hint */}
+        {!previewing && !engaged && (
+          <div className="absolute bottom-3 right-3 hidden md:flex items-center gap-2 bg-paper/90 text-ink px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] font-mono pointer-events-none z-10">
+            <Volume2 className="w-3 h-3" />
+            <span>Hover to preview</span>
+          </div>
+        )}
+      </div>
+
+      {/* Text summary */}
+      <div className="p-6 md:p-8 flex flex-col gap-4">
+        <div>
+          <h3 className="font-editorial text-[24px] md:text-[26px] leading-[1.05] tracking-tight">
+            {e.name}
+          </h3>
+          <div className="text-[11px] uppercase tracking-[0.22em] text-orange-brand mt-2 font-mono">
+            {e.title}
+          </div>
+        </div>
+        <blockquote className="font-editorial-soft italic text-[16.5px] md:text-[17.5px] leading-[1.45] text-ink border-l-2 border-orange-brand pl-4">
+          “{e.quote}”
+        </blockquote>
+        <p className="text-[13.5px] leading-[1.6] text-ink/70">
+          {e.summary}
+        </p>
+      </div>
+    </motion.article>
+  );
+};
+
 export const IndustryLeaders = () => {
   return (
     <section
@@ -70,51 +187,7 @@ export const IndustryLeaders = () => {
 
       <div className="mt-16 md:mt-20 grid md:grid-cols-2 gap-6 md:gap-8">
         {experts.map((e, i) => (
-          <motion.article
-            key={e.name}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.7, delay: (i % 2) * 0.08 }}
-            className="group flex flex-col bg-paper border border-line overflow-hidden"
-            data-testid={`industry-leader-${i}`}
-          >
-            {/* Video player */}
-            <div className="relative aspect-video bg-ink">
-              <video
-                controls
-                poster={e.poster}
-                className="w-full h-full object-cover"
-                preload="metadata"
-              >
-                <source src={e.video} type="video/mp4" />
-              </video>
-              <div className="absolute top-3 left-3 bg-paper text-ink px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] font-mono pointer-events-none">
-                0{i + 1} · Voice
-              </div>
-              <div className="absolute top-3 right-3 w-9 h-9 rounded-full bg-orange-brand text-paper flex items-center justify-center pointer-events-none">
-                <Play className="w-4 h-4 fill-current" strokeWidth={0} />
-              </div>
-            </div>
-
-            {/* Text summary */}
-            <div className="p-6 md:p-8 flex flex-col gap-4">
-              <div>
-                <h3 className="font-editorial text-[24px] md:text-[26px] leading-[1.05] tracking-tight">
-                  {e.name}
-                </h3>
-                <div className="text-[11px] uppercase tracking-[0.22em] text-orange-brand mt-2 font-mono">
-                  {e.title}
-                </div>
-              </div>
-              <blockquote className="font-editorial-soft italic text-[16.5px] md:text-[17.5px] leading-[1.45] text-ink border-l-2 border-orange-brand pl-4">
-                “{e.quote}”
-              </blockquote>
-              <p className="text-[13.5px] leading-[1.6] text-ink/70">
-                {e.summary}
-              </p>
-            </div>
-          </motion.article>
+          <VoiceCard key={e.name} e={e} i={i} />
         ))}
       </div>
 
