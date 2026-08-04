@@ -11,6 +11,7 @@ import { OurClients } from "../components/OurClients";
 import { StrategicAdvantage } from "../components/StrategicAdvantage";
 import { Organisation } from "../components/Organisation";
 import { TheResult } from "../components/TheResult";
+import { IndustryLeaders } from "../components/IndustryLeaders";
 import { CTASection } from "../components/CTASection";
 import { Footer } from "../components/Footer";
 
@@ -30,6 +31,7 @@ export default function Landing() {
       <StrategicAdvantage />
       <Organisation />
       <TheResult />
+      <IndustryLeaders />
       <CTASection />
       <Footer />
     </main>
