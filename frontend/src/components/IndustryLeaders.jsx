@@ -75,13 +75,13 @@ const VoiceCard = ({ e, i }) => {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.7, delay: (i % 2) * 0.08 }}
-      className="group flex flex-col bg-paper border border-line overflow-hidden"
+      transition={{ duration: 0.7, delay: 0.05 }}
+      className="group grid md:grid-cols-12 gap-0 bg-paper border border-line overflow-hidden"
       data-testid={`industry-leader-${i}`}
     >
-      {/* Video player */}
+      {/* Video player — left */}
       <div
-        className="relative aspect-video bg-ink cursor-pointer"
+        className="relative md:col-span-7 aspect-video md:aspect-auto md:min-h-[440px] bg-ink cursor-pointer"
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
         onClick={engaged ? undefined : handleEngage}
@@ -91,7 +91,7 @@ const VoiceCard = ({ e, i }) => {
           ref={videoRef}
           controls={engaged}
           poster={e.poster}
-          className="w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
           preload="metadata"
           playsInline
           loop={!engaged}
@@ -100,14 +100,14 @@ const VoiceCard = ({ e, i }) => {
         </video>
 
         {/* Kicker */}
-        <div className="absolute top-3 left-3 bg-paper text-ink px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] font-mono pointer-events-none z-10">
+        <div className="absolute top-4 left-4 bg-paper text-ink px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] font-mono pointer-events-none z-10">
           0{i + 1} · Voice
         </div>
 
         {/* Play badge — only before user engages */}
         {!engaged && (
           <div
-            className={`absolute top-3 right-3 w-9 h-9 rounded-full bg-orange-brand text-paper flex items-center justify-center pointer-events-none z-10 transition-opacity duration-300 ${
+            className={`absolute top-4 right-4 w-10 h-10 rounded-full bg-orange-brand text-paper flex items-center justify-center pointer-events-none z-10 transition-opacity duration-300 ${
               previewing ? "opacity-0" : "opacity-100"
             }`}
           >
@@ -117,7 +117,7 @@ const VoiceCard = ({ e, i }) => {
 
         {/* Muted-preview indicator */}
         {previewing && !engaged && (
-          <div className="absolute bottom-3 left-3 flex items-center gap-2 bg-ink/80 text-paper px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] font-mono pointer-events-none z-10 backdrop-blur-sm">
+          <div className="absolute bottom-4 left-4 flex items-center gap-2 bg-ink/80 text-paper px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] font-mono pointer-events-none z-10 backdrop-blur-sm">
             <VolumeX className="w-3 h-3" />
             <span>Muted preview · click to unmute</span>
           </div>
@@ -125,27 +125,30 @@ const VoiceCard = ({ e, i }) => {
 
         {/* First-touch hint */}
         {!previewing && !engaged && (
-          <div className="absolute bottom-3 right-3 hidden md:flex items-center gap-2 bg-paper/90 text-ink px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] font-mono pointer-events-none z-10">
+          <div className="absolute bottom-4 right-4 hidden md:flex items-center gap-2 bg-paper/90 text-ink px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] font-mono pointer-events-none z-10">
             <Volume2 className="w-3 h-3" />
             <span>Hover to preview</span>
           </div>
         )}
       </div>
 
-      {/* Text summary */}
-      <div className="p-6 md:p-8 flex flex-col gap-4">
+      {/* Text summary — right */}
+      <div className="md:col-span-5 p-8 md:p-10 lg:p-12 flex flex-col justify-center gap-5 md:border-l md:border-line">
+        <div className="text-[10px] uppercase tracking-[0.24em] text-slate-brand font-mono">
+          {String(i + 1).padStart(2, "0")} / 04
+        </div>
         <div>
-          <h3 className="font-editorial text-[24px] md:text-[26px] leading-[1.05] tracking-tight">
+          <h3 className="font-editorial text-[30px] md:text-[34px] lg:text-[38px] leading-[1.02] tracking-[-0.01em]">
             {e.name}
           </h3>
-          <div className="text-[11px] uppercase tracking-[0.22em] text-orange-brand mt-2 font-mono">
+          <div className="text-[11px] uppercase tracking-[0.22em] text-orange-brand mt-3 font-mono">
             {e.title}
           </div>
         </div>
-        <blockquote className="font-editorial-soft italic text-[16.5px] md:text-[17.5px] leading-[1.45] text-ink border-l-2 border-orange-brand pl-4">
+        <blockquote className="font-editorial-soft italic text-[19px] md:text-[21px] leading-[1.35] text-ink border-l-2 border-orange-brand pl-5">
           “{e.quote}”
         </blockquote>
-        <p className="text-[13.5px] leading-[1.6] text-ink/70">
+        <p className="text-[14px] leading-[1.65] text-ink/70">
           {e.summary}
         </p>
       </div>
@@ -185,7 +188,7 @@ export const IndustryLeaders = () => {
         moving from person-dependent institutions to system-driven organisations.
       </p>
 
-      <div className="mt-16 md:mt-20 grid md:grid-cols-2 gap-6 md:gap-8">
+      <div className="mt-16 md:mt-20 flex flex-col gap-6 md:gap-8">
         {experts.map((e, i) => (
           <VoiceCard key={e.name} e={e} i={i} />
         ))}
