@@ -30,8 +30,8 @@ export default function Landing() {
       <OurClients />
       <StrategicAdvantage />
       <Organisation />
-      <TheResult />
       <IndustryLeaders />
+      <TheResult />
       <CTASection />
       <Footer />
     </main>

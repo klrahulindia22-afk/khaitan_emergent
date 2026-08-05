@@ -12,6 +12,7 @@ const manifesto = [
   { label: "Clients", section: "clients" },
   { label: "Advantage", section: "strategic" },
   { label: "Org", section: "organisation" },
+  { label: "Voices", section: "industry-leaders" },
 ];
 
 const pages = [
@@ -46,7 +47,7 @@ export const Sidebar = () => {
 
   useEffect(() => {
     if (location.pathname !== "/") return;
-    const ids = ["problem", "promoter", "compliance", "differentiator", "pillars", "model", "clients", "strategic", "organisation"];
+    const ids = ["problem", "promoter", "compliance", "differentiator", "pillars", "model", "clients", "strategic", "organisation", "industry-leaders"];
     const observers = [];
     ids.forEach((id) => {
       const el = document.getElementById(id);
