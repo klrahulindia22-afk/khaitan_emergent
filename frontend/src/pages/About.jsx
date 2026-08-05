@@ -24,7 +24,7 @@ const principles = [
   {
     n: "04",
     t: "Handover, not lock-in.",
-    b: "The engagement ends when the system self-runs. Your operators keep the operating model — we keep the relationship.",
+    b: "The engagement ends when the system self-runs. Our operators keep the operating model — we keep the relationship.",
   },
 ];
 
