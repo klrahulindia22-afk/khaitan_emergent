@@ -26,13 +26,53 @@ const divisions = [
     title: "Academic Excellence",
     dept: "Academic Excellence Division",
     body: "Institutionalise academic excellence through research-driven frameworks and successful implementation of academic systems across partner schools.",
+    subs: [
+      {
+        code: "1A",
+        name: "Academic Research & Development Centre",
+        items: [
+          "Collect, maintain & structure NCERT books (all classes & subjects)",
+          "Develop frameworks aligned with NEP 2020, NCF & CBSE Guidelines",
+          "Create frameworks for: Lesson Plans, Annual Planners (AAP), Pedagogical Plans (APP), Teacher Logs, Student Gap Analysis Reports and other academic assets",
+          "Update all documents with changes in NCERT, NCF & CBSE guidelines",
+          "Maintain version control and quality of all academic content",
+        ],
+      },
+      {
+        code: "1B",
+        name: "Academic Implementation & Success",
+        items: [
+          "Implement Academic Operating System in partner schools",
+          "Train Leadership, Principals, Vice Principals, Teachers & Academic Staff",
+          "Ensure seamless adoption and effective utilisation",
+          "Conduct academic audits & classroom observations",
+          "Evaluate effectiveness & recommend improvements",
+          "Drive adoption, compliance and learning outcomes improvements",
+        ],
+      },
+    ],
   },
   {
     n: "02",
     icon: ClipboardList,
     title: "Review & Accountability",
     dept: "Review & Accountability Division",
-    body: "Transform schools into accountable, performance-driven organisations through effective reviews, clear expectations and strong accountability.",
+    body: "Transform schools into accountable, performance-driven organisations through effective reviews, clear expectations and strong accountability systems.",
+    subs: [
+      {
+        code: "2A",
+        name: "Review Management Department",
+        items: [
+          "Implement RMS platform",
+          "Train top leadership on RMS and deploy for audits",
+          "Train leaders to conduct reviews of all non-academic departments",
+          "Develop KRAs, KPIs & SOPs for all non-academic roles",
+          "Train employees on KRAs, KPIs & SOPs",
+          "Provide clarity on roles, expectations and performance standards",
+          "Conduct monthly, quarterly reviews and follow-ups",
+        ],
+      },
+    ],
   },
   {
     n: "03",
@@ -41,6 +81,21 @@ const divisions = [
     dept: "School Operating Manual · Playbook Division",
     body: "Custodian of the Khaitan EduOps way of operating schools — through systems, policies, formats, playbooks and operational excellence.",
     accent: "orange",
+    subs: [
+      {
+        code: "3A",
+        name: "Playbook & Operations Department",
+        items: [
+          "Develop and maintain the School Operating Manual (Playbook)",
+          "Create & update policies, formats, SOPs, plans & systems",
+          "Maintain all 10 operating systems of the Playbook",
+          "Update Playbook Agent knowledge base",
+          "Ensure implementation at partner schools",
+          "Provide day-to-day operational support",
+          "Oversee marketing & branding systems of the school",
+        ],
+      },
+    ],
   },
   {
     n: "04",
@@ -48,6 +103,20 @@ const divisions = [
     title: "KOSMOS ERP & FMS",
     dept: "KOSMOS ERP & FMS Division",
     body: "Automate and digitise the complete school ecosystem for efficiency, transparency and control.",
+    subs: [
+      {
+        code: "4A",
+        name: "ERP & FMS Implementation Department",
+        items: [
+          "Implement KOSMOS ERP & FMS in partner schools",
+          "Modules: Student Info, Admissions, Attendance, Parent Relationship, Finance, HR, Transport, Asset & Infrastructure",
+          "Provide step-by-step process flows for tasks & goals",
+          "Automate end-to-end school operations",
+          "Ensure data accuracy, integration & security",
+          "Provide user support and change management",
+        ],
+      },
+    ],
   },
   {
     n: "05",
@@ -55,6 +124,20 @@ const divisions = [
     title: "Khaitan EduOps Academy",
     dept: "Khaitan EduOps Academy Division",
     body: "Build institutional capability by developing the knowledge, skills and mindset of all key stakeholders in schools.",
+    subs: [
+      {
+        code: "5A",
+        name: "Training & Capability Development Department",
+        items: [
+          "Train Promoters, Directors, Principals & Vice Principals",
+          "Teacher training: Classroom Management, Teaching Pedagogy, Assessment, Engagement",
+          "Functional training for: Finance, HR, Transport, Admissions, Estate, Admin & others",
+          "Certification programmes for leaders, teachers & staff",
+          "Equip key position holders with knowledge & skills to achieve KPIs",
+          "Continuous learning & capability enhancement",
+        ],
+      },
+    ],
   },
   {
     n: "06",
@@ -62,6 +145,21 @@ const divisions = [
     title: "School Transformation & Implementation",
     dept: "School Transformation & Implementation Division",
     body: "Drive end-to-end transformation and ensure successful adoption, implementation and sustainability of systems and processes.",
+    subs: [
+      {
+        code: "6A",
+        name: "Transformation Department",
+        items: [
+          "Deep dive into current systems of partner schools",
+          "Provide gap analysis reports",
+          "Design transformation roadmaps",
+          "Support implementation of systems & processes",
+          "Conduct frequent audits (academic & non-academic)",
+          "Ensure 100% implementation and sustainability",
+          "Provide all support required for successful adoption",
+        ],
+      },
+    ],
   },
   {
     n: "07",
@@ -69,6 +167,20 @@ const divisions = [
     title: "Corporate Services",
     dept: "Corporate Services Division",
     body: "Enable the organisation through robust corporate support functions — HR, Finance, Sales, Marketing, Admin & Legal, and IT.",
+    subs: [
+      {
+        code: "7A",
+        name: "Corporate Services Department",
+        items: [
+          "Human Resources (Talent, Culture, Engagement)",
+          "Finance & Accounts (Planning, Reporting, Controls)",
+          "Sales & Partnerships (Business Development)",
+          "Marketing & Communications (Brand, Digital, PR)",
+          "Administration & Legal (Compliance, Contracts, General Administration)",
+          "IT & Infrastructure Support",
+        ],
+      },
+    ],
   },
 ];
 
@@ -187,6 +299,36 @@ export const Organisation = () => {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* Divisions in Detail — sub-departments & responsibilities */}
+      <div className="mt-20 md:mt-28" data-testid="divisions-detail">
+        <div className="flex items-baseline gap-4 mb-8">
+          <span className="font-editorial italic text-[46px] leading-none text-orange-brand">
+            ¶
+          </span>
+          <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-slate-brand">
+            Divisions in detail
+          </span>
+          <span className="hidden md:block flex-1 h-px bg-ink/15 ml-6" />
+        </div>
+        <h3 className="font-editorial text-[7vw] md:text-[4vw] lg:text-[3vw] leading-[1.05] tracking-[-0.02em] max-w-5xl">
+          Seven divisions.{" "}
+          <span className="italic font-editorial-soft text-orange-brand">
+            Every KPI accounted for.
+          </span>
+        </h3>
+        <p className="mt-6 max-w-2xl text-[15px] leading-[1.65] text-ink/70">
+          Below the org chart, each division breaks into named sub-departments
+          with a fixed remit and measurable KPIs — the actual operating grammar
+          of a Khaitan EduOps school.
+        </p>
+
+        <div className="mt-14 flex flex-col gap-6">
+          {divisions.map((d, i) => (
+            <DivisionDetail key={d.n} d={d} i={i} />
+          ))}
         </div>
       </div>
 
@@ -342,6 +484,126 @@ const DivisionNode = ({ d, i, mobile }) => {
         }`}
       >
         {d.dept}
+      </div>
+    </motion.article>
+  );
+};
+
+
+const DivisionDetail = ({ d, i }) => {
+  const isOrange = d.accent === "orange";
+  const Icon = d.icon;
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.6, delay: 0.05 }}
+      className={`grid md:grid-cols-12 gap-0 border overflow-hidden ${
+        isOrange
+          ? "bg-orange-brand text-paper border-transparent"
+          : "bg-paper border-line"
+      }`}
+      data-testid={`division-detail-${d.n}`}
+    >
+      {/* Left — heading & purpose */}
+      <div className="md:col-span-5 lg:col-span-4 p-8 md:p-10 lg:p-12 flex flex-col justify-between gap-8 md:border-r md:border-line">
+        <div>
+          <div
+            className={`flex items-center gap-3 text-[10px] uppercase tracking-[0.24em] font-mono ${
+              isOrange ? "text-paper/70" : "text-slate-brand"
+            }`}
+          >
+            <span
+              className={`w-8 h-8 rounded-full flex items-center justify-center ${
+                isOrange ? "bg-paper/15" : "bg-ink/5"
+              }`}
+            >
+              <Icon
+                className={`w-3.5 h-3.5 ${isOrange ? "" : "text-ink"}`}
+                strokeWidth={1.5}
+              />
+            </span>
+            <span>Division · {d.n} / 07</span>
+          </div>
+
+          <div
+            className={`mt-8 font-editorial italic leading-none tracking-[-0.04em] ${
+              isOrange ? "text-paper/25" : "text-orange-brand/70"
+            }`}
+            style={{ fontSize: "clamp(72px, 10vw, 128px)" }}
+          >
+            {d.n}
+          </div>
+
+          <h4 className="mt-4 font-editorial text-[28px] md:text-[32px] leading-[1.02] tracking-[-0.01em]">
+            {d.title}
+          </h4>
+          <div
+            className={`mt-3 text-[11px] uppercase tracking-[0.22em] font-mono ${
+              isOrange ? "text-paper/80" : "text-orange-brand"
+            }`}
+          >
+            {d.dept}
+          </div>
+        </div>
+
+        <p
+          className={`font-editorial-soft italic text-[17px] md:text-[19px] leading-[1.4] border-l-2 pl-5 ${
+            isOrange
+              ? "text-paper border-paper/50"
+              : "text-ink border-orange-brand"
+          }`}
+        >
+          {d.body}
+        </p>
+      </div>
+
+      {/* Right — sub-departments & KPIs */}
+      <div
+        className={`md:col-span-7 lg:col-span-8 p-8 md:p-10 lg:p-12 flex flex-col gap-8 ${
+          d.subs.length > 1 ? "md:grid md:grid-cols-2 md:gap-10" : ""
+        }`}
+      >
+        {d.subs.map((s, si) => (
+          <div key={s.code} className="flex flex-col gap-4">
+            <div className="flex items-baseline gap-3">
+              <span
+                className={`font-mono text-[10px] uppercase tracking-[0.22em] px-2 py-1 ${
+                  isOrange
+                    ? "bg-paper/15 text-paper"
+                    : "bg-ink text-paper"
+                }`}
+              >
+                {s.code}
+              </span>
+              <h5
+                className={`font-editorial text-[19px] md:text-[21px] leading-[1.1] tracking-tight ${
+                  isOrange ? "text-paper" : "text-ink"
+                }`}
+              >
+                {s.name}
+              </h5>
+            </div>
+            <ul className="flex flex-col gap-2.5">
+              {s.items.map((it, ii) => (
+                <li
+                  key={ii}
+                  className={`flex items-start gap-3 text-[14px] leading-[1.55] ${
+                    isOrange ? "text-paper/90" : "text-ink/80"
+                  }`}
+                >
+                  <span
+                    className={`mt-[7px] w-1.5 h-1.5 rounded-full shrink-0 ${
+                      isOrange ? "bg-paper" : "bg-orange-brand"
+                    }`}
+                  />
+                  <span>{it}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </motion.article>
   );
