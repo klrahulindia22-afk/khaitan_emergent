@@ -36,9 +36,9 @@ export default function Contact() {
             one of a Transformation engagement. Zero decks. Zero commitments.
           </p>
           <div className="md:col-span-4 md:col-start-8 space-y-6">
-            <ContactChip icon={Mail} label="Email" value="hello@khaitaneduops.com" href="mailto:hello@khaitaneduops.com" />
-            <ContactChip icon={Phone} label="Group office" value="+91 11 4000 0000" href="tel:+911140000000" />
-            <ContactChip icon={MapPin} label="Located" value="New Delhi · India" />
+            <ContactChip icon={Mail} label="Email" value="cofounder@khaitaneduops.com" href="mailto:cofounder@khaitaneduops.com" />
+            <ContactChip icon={Phone} label="Group office" value="+91 99100 55242" href="tel:+919910055242" />
+            <ContactChip icon={MapPin} label="Located" value="A9, 3rd Floor, The Grent, Sector 136, Noida, Uttar Pradesh 201304" />
           </div>
         </div>
       </section>

@@ -102,25 +102,29 @@ export const Footer = () => {
           <ul className="space-y-2 text-[15px] text-paper/80">
             <li>
               <a
-                href="mailto:hello@khaitaneduops.com"
+                href="mailto:cofounder@khaitaneduops.com"
                 className="link-underline hover:text-orange-brand transition-colors"
                 data-testid="footer-email"
               >
-                hello@khaitaneduops.com
+                cofounder@khaitaneduops.com
               </a>
             </li>
             <li>
               <a
-                href="tel:+911140000000"
+                href="tel:+919910055242"
                 className="link-underline hover:text-orange-brand transition-colors"
               >
-                +91 11 4000 0000
+                +91 99100 55242
               </a>
             </li>
             <li className="pt-2 text-[13px] text-paper/60 leading-relaxed">
               Group Office
               <br />
-              New Delhi · India
+              A9, 3rd Floor, The Grent,
+              <br />
+              Sector 136, Noida,
+              <br />
+              Uttar Pradesh 201304
             </li>
           </ul>
 
