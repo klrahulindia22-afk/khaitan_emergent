@@ -3,7 +3,7 @@ import os
 import requests
 import pytest
 
-BASE_URL = os.environ.get("REACT_APP_BACKEND_URL", "https://person-to-system.preview.emergentagent.com").rstrip("/")
+BASE_URL = os.environ.get("REACT_APP_BACKEND_URL", "https://eduops-platform-1.preview.emergentagent.com").rstrip("/")
 API = f"{BASE_URL}/api"
 
 

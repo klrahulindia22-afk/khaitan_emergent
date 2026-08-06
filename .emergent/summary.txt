@@ -10,120 +10,117 @@ PRODUCT REQUIREMENTS:
 **User's preferred language**: English (INSTRUCT next agent to respond in English)
 
 **what currently exists?**: 
-A highly polished, Awwwards-worthy React frontend with complex scroll animations (Lenis + Framer Motion) and editorial design. It includes a Landing page with over 10 custom sections (Hero, Problem, AOS, Promoter Pain, Pillars, Model, Clients, Strategic Advantage, Organisation, etc.), an About page (with founder profiles), a Contact page, and dynamic Pillar Detail pages. A FastAPI backend is set up and tested, successfully handling form submissions for  and  stored in MongoDB.
+A highly polished, Awwwards-worthy React frontend with complex scroll animations (Lenis + Framer Motion) and editorial design. It includes a Landing page with comprehensive custom sections (Hero, Problem, AOS, Promoter Pain, Pillars, Model, Clients, Strategic Advantage, Organisation + Detailed KPI blocks, Voices/Industry Leaders), an About page, Contact page, and dynamic Pillar Detail pages. The FastAPI backend is set up to handle Form Submissions (Contact & Demo) saving to MongoDB. 
 
 **Last working item**:
-- Last item agent was working: Creating a 2x2 grid section for Industry Leaders with dummy video players on one side and text summaries on the other, wiring it into the Landing page.
-- Status: TESTING PENDING (Agent created the files and successfully compiled, but hasn't verified visually or responded to the user).
-- Agent Testing Done: N
-- Which testing method agent to use? screenshot tool
-- User Testing Done: N
+    - Last item agent was working: Fixing a minor copy error on the About page (Your operators -> Our operators).
+    - Status: COMPLETED
+    - Agent Testing Done: Y
+    - Which testing method agent to use? screenshot tool
+    - User Testing Done: N/A (Agent tested it visually and finished)
 
 **All Pending/In progress Issue list**:
-  Issue 1: Verify and showcase the Industry Leaders section
-     - Attempted fixes: Created  and injected it into . Compiled successfully.
-     - Next debug checklist: Take a screenshot of the landing page to verify the 2x2 grid layout, video placeholders, and text styling match the site's strict editorial design language. Respond to the user.
-     - Why fix this issue and what will be achieved with the fix? Completes the user's last request.
-     - Status: TESTING PENDING
-     - Is recurring issue? N
-     - Should Test frontend/backend/both after fix? frontend (screenshot tool)
-     - Blocked on other issue: None
+  None. Codebase is stable.
 
 **In progress Task List**:
-  Task 1: Showcase Industry Leaders implementation
-     - Where to resume: Take a screenshot using  to check the newly added  on the Landing page, then reply to the user.
-     - What will be achieved with this? Closes out the active prompt cycle.
-     - Status: TESTING PENDING
-     - Should Test frontend/backend/both after fix? frontend
-     - Blocked on something: None
+  None. The last task was wrapped up cleanly.
 
-**Upcoming and Future Tasks**:
+**Upcoming and Future Tasks**
   Upcoming Tasks:
-  - Replace dummy video content in the Industry Leaders section with real assets once the user provides them (P1).
+  - **Restore Video UI in Voices Section (P0)**: Replace the current SVG placeholders in  with actual real portrait and video footage once the user provides them. *Note: Video hover-to-play-muted and click-to-unmute logic was previously built but disabled/removed to accommodate these SVG placeholders.*
+  - **Division Landing Pages (P1)**: Give each of the 7 divisions its own page (similar to ) detailing the mandate, KPIs, team, and contact CTA.
+  - **Voices Archive Page (P1)**: Give the Voices (Industry Leaders) a dedicated page with a longer list of leaders and filter capabilities by role (Educator, Operator, Investor).
 
-**Completed work in this session**:
-- Installed  and  for smooth scrolling (DONE)
-- Set up global typography and CSS variables for the editorial theme (DONE)
-- Built Landing Page sections: Hero, ProblemSection, PromoterPain, ComplianceGap, TheResult, Differentiator, BusinessModel, OurClients, StrategicAdvantage, Organisation, AOS (DONE)
-- Built Seven Pillars section with custom SVG illustrations in  (DONE)
-- Created dynamic  pages parsing data from  (DONE)
-- Created About page with B&W founder profiles () (DONE)
-- Implemented Contact and Book Demo forms connected to backend (, ) (DONE)
-- Backend FastAPI implementation for form CRUD operations () (DONE)
+  Future Tasks:
+  - **Case Studies / Group Portfolio Page (P2)**: Dedicated page showcasing success stories.
+  - **Downloadable Org Poster (P2)**: Allow visitors to download the org chart and division-detail block as a printable PDF one-pager.
+  - **Multilingual Toggle (P2)**: EN / HI support.
+  - **Analytics + Heat-map Integration (P2)**.
 
-**Earlier issues found/mentioned but not fixed**:
+**Completed work in this session**
+- Verified the base Industry Leaders (Voices) section (DONE)
+- Added Play-On-Hover and Click-to-Unmute logic for Voices (DONE)
+- Refactored Voices section to a Side-by-Side Editorial Layout instead of 2x2 grid (DONE)
+- Promoted Voices to Nav section 08 Voices, placed directly after 07 Org (DONE)
+- Renamed all Org chart entities to {Name} Division in  (DONE)
+- Added Divisions in Detail section with full sub-departments and KPI bullet lists in  (DONE)
+- Created  with editorial SVG placeholders and temporarily disabled video-logic in  until real assets arrive (DONE)
+- Fixed text copy in  Principle 04 (DONE)
+
+**Earlier issues found/mentioned but not fixed**
 None.
 
-**Known issue recurrence from previous fork**:
-- Issue recurrence in previous fork: N/A (First session)
+**Known issue recurrence from previous fork**
+- Issue recurrence in previous fork: N/A
 - Recurrence count: 0
 - Status: N/A
 
-**Code Architecture**:
+**Code Architecture**
 
 
-**Key Technical Concepts**:
-- Frontend: React, TailwindCSS, Framer Motion, Lenis (smooth scroll). Heavy focus on Awwwards-level editorial design.
+**Key Technical Concepts**
+- Frontend: React, TailwindCSS, Framer Motion, Lenis (smooth scroll). High adherence to editorial design language.
 - Backend: FastAPI, MongoDB (Motor/PyMongo).
-- Architecture: SPA with distinct scroll sections, backend strictly for form capture.
+- Architecture: SPA with interactive distinct scroll sections.
 
-**key DB schema**:
+**key DB schema**
 - : {id, name, email, school, role, message, submitted_at}
 - : {id, name, email, school, students, date, time, notes, submitted_at}
 
-**changes in tech stack**:
+**changes in tech stack**
 - None
 
-**All files of reference**:
--  (Newly created file needing visual verification)
--  (Updated to include IndustryLeaders)
--  (Recent complex addition)
--  (Contains heavily formatted founder cards)
--  (Project documentation)
+**All files of reference**
+-  (Updated to side-by-side layout, video logic currently swapped out for SVGs)
+-  (Newly created file for SVG voice placeholders)
+-  (Updated to include Divisions In Detail block)
+-  (Reordered sections)
+-  (Updated for dynamic numbering)
+-  (Minor copy fix)
 
-**Areas that need refactoring**:
--  - Has many imports and sections; keep an eye on component bloat if more sections are added.
+**Areas that need refactoring**
+-  is getting quite large (~500 lines) due to heavy inline copy, KPI arrays, and SVG blocks. Might warrant breaking out data to a separate file or component split.
 
-**key api endpoints**:
+**key api endpoints**
 - 
 - 
 
-**Critical Info for New Agent**:
-- **Design is Paramount**: The user demands Awwwards-level aesthetics. Any new component MUST strictly adhere to the editorial guidelines: use  (Fraunces) for headings/accents,  (Nunito) for branding, mono fonts for kickers. Adhere to the color palette: Ink (), Paper Cream (), and Vivid Orange ().
-- **Motion**: Everything should utilize  for reveals. Do not break the  smooth scrolling context.
-- **Images**: Maintain the  filter on founder portraits. 
+**Critical Info for New Agent**
+- **Design is Paramount**: Maintain the Awwwards-level aesthetics. Use  (Fraunces) for headings/accents,  (Nunito) for branding, mono fonts for kickers. Colors: Ink (), Paper Cream (), Vivid Orange ().
+- **Video Logic for Voices**: In the previous job, robust hover-to-play-muted and click-to-unmute logic was implemented for the Voices component. However, the user asked to use illustration placeholders pending actual video assets. The agent completely removed the video HTML/logic to put the static SVGs in. **You will likely need to rebuild or re-introduce the HTML5 video tags and state logic (, , ) once the user provides the real videos.**
+- **Navigation Numbering**: Numbering in  maps automatically using map indices (), so inserting sections respects dynamic ordering without hardcoding strings like 08.
 
-**documents and test reports created in this job**:
-- 
-- 
+**documents and test reports created in this job**
+-  (Updated regularly with completion statuses)
 
-**Last 10 User Messages and any pending HUMAN messages**:
-1. *User*: Replace Vedant's photo with the attached photo (black n white). -> *Agent*: Replaced.
-2. *User*: The head of Vedant should be full visible and the picture needs to be more sharpen. -> *Agent*: Adjusted object-position and CSS filters.
-3. *User*: Use the below text for Asheesh (pls replace)... -> *Agent*: Updated Asheesh's bio.
-4. *User*: Generate - PRP, AAP... built with one click. -> *Agent*: Updated copy in AOS section.
-5. *User*: Delete Asheesh Kumar Sharma · Co-founder from attachment 1 and change the font... -> *Agent*: Applied typographic fixes.
-6. *User*: 2. let it be same earlier. -> *Agent*: Reverted specific font changes.
-7. *User*: Change the font, use similar kind of font as used for other texts... -> *Agent*: Unified footer wordmark fonts.
-8. *User*: Replace Asheesh picture with the attached new picture... -> *Agent*: Replaced and retained filters.
-9. *User*: Make changes or additions in the attached reference content... -> *Agent*: Clarified requirements, then applied logo and copy updates to wheel and AOS sections.
-10. *User*: create a 2x2 grid section for Industry Leaders with a video player on one side and a text summary on the other for each expert... Right now use dummy content. -> *Agent*: Created the file and compiled successfully, **(PENDING: Visual verification and reply to user)**.
+**Last 10 User Messages and any pending HUMAN messages**
+1. *User*: Please use ask_human tool and confirm your plan now. -> *User skip*: No need for clarification, proceed. -> *Agent*: Tested Industry Leaders block.
+2. *User*: Play On Hover: Auto-play muted preview on hover with sound only after a real click, so the grid feels alive -> *Agent*: Implemented and tested hover logic.
+3. *User*: Text Side Layout: Try a side-by-side variant with video left and text right for a more editorial feel -> *Agent*: Refactored to single-column side-by-side stack.
+4. *User*: This page should come under different section e.g. after 07 Org -> *Agent*: Reordered Landing.jsx and Sidebar.jsx to make Voices 08.
+5. *User*: Name all departments as Division (e.g. Academic Excellence Division) 01 to 07) -> *Agent*: Renamed labels in Organisation.jsx.
+6. *User*: Attached is the details of each division with their KPIs -> *Agent*: Added detailed KPI blocks below the Org chart in Organisation.jsx.
+7. *User*: Will provide you actual name, photo and video later, as of now please use illustrations photo instead of the real photos -> *Agent*: Built custom VoiceIllustration SVGs and replaced the video logic in IndustryLeaders.jsx with these static placeholders.
+8. *User*: It's our operators keep the operating model -> *Agent*: Fixed typo in About.jsx and verified via screenshot.
 
-**Project Health Check**:
+**Project Health Check:**
 - Broken: None.
-- Mocked: Dummy content for Industry Leaders videos and text.
+- Mocked: SVG illustrations used in Voices section (IndustryLeaders.jsx) in place of real photos/videos until assets are supplied.
 
-**3rd Party Integrations**:
-None currently implemented. 
+**3rd Party Integrations**
+- None currently implemented.
 
-**Testing status**:
-- Testing agent used after significant changes: YES (iteration_1.json)
+**Testing status**
+- Testing agent used after significant changes: NO (Heavy reliance on  for continuous visual UI checks instead).
 - Troubleshoot agent used after agent stuck in loop: NO
-- Test files created: 
-- Known regressions: None
+- Test files created: None this session.
+- Known regressions: None.
 
-**Credentials to test flow**:
+**Credentials to test flow:**
 None (No auth implemented).
 
-**What agent forgot to execute**:
-The agent successfully wrote the code for the Industry Leaders component and compiled it via bash, but forgot to use  to visually verify the layout and forgot to send a final text response to the user acknowledging completion.</analysis>
+**What agent forgot to execute**
+Nothing. The agent successfully addressed every micro-instruction chronologically and tested visually.
+
+**Debugging checklist for current issue**
+N/A (No active bugs).</analysis>

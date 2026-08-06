@@ -14,7 +14,7 @@ const stages = [
     tagline:
       "The school executes. We govern. Playbooks, dashboards and reviews are installed while the promoter continues to own operations legally.",
     ownedBy:
-      "Land, building, staff employment, balance sheet, P&L and day-to-day academic operations.",
+      "Land, building, staff employment, balance sheet, P&L and day-to-day academic and non-academic operations.",
     provided: [
       "Academic Operating System",
       "Review Management System",
