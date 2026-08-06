@@ -126,6 +126,20 @@ export const Hero = () => {
             style={{ y: yImage }}
             className="relative w-full ml-auto"
           >
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.05 }}
+              className="mb-4 flex items-baseline gap-3"
+              data-testid="hero-pillars-heading"
+            >
+              <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-orange-brand">
+                07
+              </span>
+              <h2 className="font-mono text-[11px] uppercase tracking-[0.24em] text-ink/70">
+                Pillars of the Operating System
+              </h2>
+            </motion.div>
             <div
               className="grid grid-cols-2 border-t border-l border-ink/15"
               data-testid="hero-pillar-index"
