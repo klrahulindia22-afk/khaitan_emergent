@@ -108,13 +108,10 @@ export const StrategicAdvantage = () => {
               A
             </span>
             <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-slate-brand">
-              Our Positioning
+              Our Position
             </span>
           </div>
           <div className="bg-cream border border-line p-8 md:p-10">
-            <div className="text-[10px] uppercase tracking-[0.22em] text-slate-brand mb-3">
-              Our narrative will NOT be
-            </div>
             <p className="font-editorial text-[24px] md:text-[26px] leading-[1.15] tracking-tight italic font-editorial-soft line-through decoration-orange-brand decoration-[2px] text-ink/70">
               “We provide technology to schools.”
             </p>
@@ -126,9 +123,6 @@ export const StrategicAdvantage = () => {
               className="pointer-events-none absolute -bottom-16 -right-4 font-editorial italic text-[180px] leading-none text-paper/[0.06] select-none"
             >
               ✓
-            </div>
-            <div className="relative z-10 text-[10px] uppercase tracking-[0.22em] text-orange-brand mb-3">
-              It WILL be
             </div>
             <p className="relative z-10 font-editorial text-[26px] md:text-[30px] leading-[1.15] tracking-tight">
               We{" "}
