@@ -62,7 +62,7 @@ const segments = [
     icon: Wallet,
     title: "Investor-Backed Education Groups",
     profile:
-      "PhysicsWallah, Lighthouse, Narayana, Chaitanya-class groups.",
+      "Private investors making large financial investments in the education sector.",
     pain: "Scalable systems, technology and governance for institutional scaling.",
     label: "Future segment",
     accent: "orange",
