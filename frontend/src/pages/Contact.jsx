@@ -37,8 +37,8 @@ export default function Contact() {
           </p>
           <div className="md:col-span-4 md:col-start-8 space-y-6">
             <ContactChip icon={Mail} label="Email" value="cofounder@khaitaneduops.com" href="mailto:cofounder@khaitaneduops.com" />
-            <ContactChip icon={Phone} label="Group office" value="+91 99100 55242" href="tel:+919910055242" />
-            <ContactChip icon={MapPin} label="Located" value="A9, 3rd Floor, The Grent, Sector 136, Noida, Uttar Pradesh 201304" />
+            <ContactChip icon={Phone} label="Contact" value="+91 99100 55242" href="tel:+919910055242" />
+            <ContactChip icon={MapPin} label="Located" value="A9, 3rd Floor, The Grent, Sector 136, Noida, Uttar Pradesh 201304" href="https://www.google.com/maps/dir//Khaitan+Eduserve,+A9,3rd+floor,+The+Grent,+Sector+136,+Noida,+Uttar+Pradesh+201304/@28.5134549,77.3898596,3023m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x390ce900705471e7:0x111e909054ff4eb0!2m2!1d77.4013201!2d28.5073556" external />
           </div>
         </div>
       </section>
@@ -63,7 +63,7 @@ export default function Contact() {
   );
 }
 
-const ContactChip = ({ icon: Icon, label, value, href }) => {
+const ContactChip = ({ icon: Icon, label, value, href, external }) => {
   const Inner = (
     <div className="group flex items-start gap-4 py-4 border-b border-ink/15">
       <div className="w-9 h-9 rounded-full border border-ink/20 flex items-center justify-center shrink-0 group-hover:bg-ink group-hover:text-paper transition-colors">
@@ -78,7 +78,11 @@ const ContactChip = ({ icon: Icon, label, value, href }) => {
     </div>
   );
   return href ? (
-    <a href={href} className="block">
+    <a
+      href={href}
+      className="block"
+      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+    >
       {Inner}
     </a>
   ) : (
