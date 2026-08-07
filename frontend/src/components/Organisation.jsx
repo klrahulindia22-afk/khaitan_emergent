@@ -320,7 +320,7 @@ export const Organisation = () => {
           </span>
         </h3>
         <p className="mt-6 max-w-2xl text-[15px] leading-[1.65] text-ink/70">
-          Below the org chart, each division breaks into named sub-departments
+          Each division breaks into named sub-departments
           with a fixed remit and measurable KPIs — the actual operating grammar
           of a Khaitan EduOps school.
         </p>
