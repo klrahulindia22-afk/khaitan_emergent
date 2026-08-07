@@ -388,11 +388,7 @@ export const StrategicAdvantage = () => {
           ))}
         </div>
 
-        <div className="mt-14 flex flex-wrap items-center justify-between gap-6">
-          <div className="max-w-md text-[15px] leading-[1.6] text-ink/70">
-            Every school that adopts the operating layer becomes a proof point —
-            and every proof point compounds the moat.
-          </div>
+        <div className="mt-14 flex flex-wrap items-center justify-end gap-6">
           <Link
             to="/contact"
             className="group inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-full bg-ink text-paper hover:bg-orange-brand transition-colors"
