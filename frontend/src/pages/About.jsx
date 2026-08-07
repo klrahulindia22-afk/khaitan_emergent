@@ -81,7 +81,7 @@ export default function About() {
           </p>
           <div className="md:col-span-4 md:col-start-8 space-y-6">
             <div>
-              <div className="font-editorial text-4xl md:text-5xl">18 mo</div>
+              <div className="font-editorial text-4xl md:text-5xl">6 mo</div>
               <div className="text-[11px] uppercase tracking-[0.22em] text-slate-brand mt-2">
                 Average time to self-sustaining operating model
               </div>
