@@ -66,7 +66,7 @@ const stages = [
     tint: "orange",
     icon: Crown,
     tagline:
-      "We operate the institutions under our own brand — The Khaitan International School. The promoter becomes an asset owner or investor.",
+      <>We operate the institutions under our own brand — <strong className="font-semibold">The Khaitan International School</strong>. The promoter becomes an asset owner or investor.</>,
     ownedBy:
       "Promoter retains ownership of land and building with board-level oversight. Everything else is run by us.",
     provided: [
