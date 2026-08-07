@@ -74,7 +74,7 @@ export default function About() {
           <p className="md:col-span-6 md:col-start-1 text-[16px] md:text-[17px] leading-[1.65] text-ink/75">
             Khaitan EduOps was founded because Indian schools do not need
             another platform — they need an{" "}
-            <em className="font-editorial-soft italic">operator</em>. Our team
+            <em className="font-editorial-soft italic text-[1.35em] text-orange-brand align-baseline">operator</em>. Our team
             has run schools, built K-12 groups, engineered ERPs and coached
             teachers. We put those disciplines on one desk, on your campus, and
             keep them there until the system runs itself.
