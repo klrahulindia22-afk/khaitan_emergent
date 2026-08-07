@@ -271,12 +271,6 @@ const StageCard = ({ stage, index }) => {
           ))}
         </ul>
       </div>
-
-      <div
-        className={`mt-8 pt-6 border-t ${divider} text-[12px] italic leading-[1.55] font-editorial-soft ${muted}`}
-      >
-        {stage.footnote}
-      </div>
     </motion.article>
   );
 };
