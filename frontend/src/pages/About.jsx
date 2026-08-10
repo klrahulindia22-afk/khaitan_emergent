@@ -32,13 +32,13 @@ const leadership = [
   {
     name: "Vedant Khaitan",
     role: "Founder & Director",
-    img: "https://customer-assets-m6fa6gv7.emergentagent.net/job_684ff79f-60f2-4b46-8ca8-a48ed8c1b296/artifacts/xn4r2fhz_VK%20Pic%207.webp",
+    img: "https://customer-assets-m6fa6gv7.emergentagent.net/job_684ff79f-60f2-4b46-8ca8-a48ed8c1b296/artifacts/6rqdtsug_Vedant%20Khaitan.png",
     bio: "Coming from a distinguished background of leading lawyers, industrialists and educationists, Mr. Khaitan represents the best of knowledge, entrepreneurship and dynamism. The Khaitan family runs numerous schools that are beacons of excellence — The Khaitan School (Noida), Khaitan Public School (Ghaziabad), Khaitan Preschool (Noida), BDM International School (Kolkata), Indus Valley World School (Kolkata) and Sunny Preparatory School (Kolkata) among them.\n\nMr. Khaitan is an alumnus of Modern School, Vasant Vihar, and a Mechanical Engineer from The University of Michigan, Ann Arbor, USA. Inducted into the management of The Khaitan School in 2008, he has played key roles in several of the institution's milestones, including founding the Khaitan Preschool in 2013 — since recognised as a leading educational institution in Noida.\n\nHe helped set up the Gautam Budh Nagar Chapter of the Independent School Federation of India and co-founded the K12 education chapter of FICCI ARISE, the education policy advocacy body — where he currently chairs the North Committee and the Membership Committee. He has also completed the Business Mastery Programme and an intensive course on Digital Marketing at Business Coaching India by Mr. Rahul Jain.",
   },
   {
     name: "Asheesh Kumar Sharma",
     role: "Co-founder & CEO",
-    img: "https://customer-assets-gfyr7b9c.emergentagent.net/job_consistency-platform/artifacts/0ygdwtx9_Asheesh2026.png",
+    img: "https://customer-assets-m6fa6gv7.emergentagent.net/job_684ff79f-60f2-4b46-8ca8-a48ed8c1b296/artifacts/3eeoaqck_Asheesh2026.png",
     bio: "Asheesh Kumar Sharma is a seasoned education management leader with over 22 years of experience in establishing, scaling and managing K-12 educational institutions across India and the UAE. Recognised for his expertise in driving operational excellence and institutional growth, he specialises in end-to-end school setup, strategic planning, financial governance, regulatory compliance and brand development.\n\nThroughout his career, Asheesh has held key executive roles, including Founding CEO and Executive Director, leading high-impact educational institutions from ground-zero inception to multi-thousand student capacity. His strategic approach integrates modern process automation, quality control and robust operational frameworks to build sustainable, high-performing schools.\n\nAn MBA in Operations, ISO 9001 Lead Auditor and Six Sigma Green Belt, Asheesh combines strategic foresight with rigorous systems engineering. As Co-Founder, he is committed to building scalable educational models, streamlining academic and non-academic governance, and driving organisational success.",
   },
 ];
