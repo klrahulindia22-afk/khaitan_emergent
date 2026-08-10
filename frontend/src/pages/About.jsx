@@ -210,7 +210,7 @@ export default function About() {
                     src={m.img}
                     alt={m.name}
                     className="w-full h-full object-cover object-top"
-                    style={{ filter: m.imgFilter || "grayscale(1) contrast(1.2) brightness(1.02)" }}
+                    style={{ filter: m.imgFilter || "contrast(1.05)" }}
                     draggable={false}
                   />
                   <div className="absolute top-4 left-4 bg-paper text-ink px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] font-mono">
