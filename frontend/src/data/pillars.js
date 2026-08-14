@@ -84,10 +84,22 @@ export const pillars = [
     description:
       "Designed for school owners, internal and external auditors, and institutional leadership to drive accountability and performance excellence.",
     outcomes: [
-      "Single source-of-truth dashboard",
-      "Auto-escalation SLAs",
-      "Promoter-facing weekly digest",
-      "Attribution to individual owners",
+      {
+        title: "Role-wise KPIs & SOPs",
+        body: "Clear, role-specific KPIs and detailed SOPs across every function — a corporate-style governance framework that removes ambiguity and person-dependence.",
+      },
+      {
+        title: "The management blueprint",
+        body: "A handbook that codifies performance measurement, accountability and strategic planning — explaining what needs to be done and why, so every leader operates from the same script.",
+      },
+      {
+        title: "Real-time execution platform",
+        body: "Digitised performance tracking, departmental target monitoring, standardised workflows and real-time reports — turning intent into daily execution.",
+      },
+      {
+        title: "Institutionally scaled outcomes",
+        body: "Stronger admissions, tighter financial discipline, higher parent satisfaction and sustainable scaling — with reduced dependence on the promoter.",
+      },
     ],
     image:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
