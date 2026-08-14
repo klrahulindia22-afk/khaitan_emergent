@@ -10,10 +10,18 @@ export const pillars = [
     description:
       "An operating system for K-12 pedagogy — from annual plans down to a single lesson. Eight core modules that make every subject, every section, every week reproducible.",
     outcomes: [
-      "Cohort-wide mastery scores",
-      "Section-to-section variance <8%",
-      "Weekly diagnostic feedback loops",
-      "One-click compliance with national frameworks",
+      {
+        title: "One-click alignment",
+        body: "The academic OS ensures that everything from the Annual Pedagogical Plan (APP) to student study notes are automatically aligned with NCF and NEP guidelines with a single button click.",
+      },
+      {
+        title: "Automated quality control",
+        body: 'By moving from structured documents to a fully automated platform, the system removes the "discretionary" element that leads to errors.',
+      },
+      {
+        title: "System-controlled quality",
+        body: "Instead of relying on a Principal to check 12,000 plans, the Academic OS acts as the infrastructure layer — ensuring every piece of content is pre-validated and standardised across all campuses.",
+      },
     ],
     image:
       "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1600&auto=format&fit=crop",

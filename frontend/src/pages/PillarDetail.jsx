@@ -120,29 +120,38 @@ export default function PillarDetail() {
           </h2>
 
           <div className="mt-14 grid md:grid-cols-2 gap-4 md:gap-5">
-            {pillar.outcomes.map((o, i) => (
-              <motion.div
-                key={o}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.6, delay: i * 0.08 }}
-                className="flex items-start gap-4 p-6 md:p-8 border border-paper/15 bg-ink-deep"
-                data-testid={`pillar-outcome-${i}`}
-              >
-                <div className="w-9 h-9 rounded-full bg-orange-brand text-paper flex items-center justify-center shrink-0">
-                  <Check className="w-4 h-4" strokeWidth={2.2} />
-                </div>
-                <div className="pt-1">
-                  <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-paper/50 mb-1">
-                    Outcome {String(i + 1).padStart(2, "0")}
+            {pillar.outcomes.map((o, i) => {
+              const title = typeof o === "string" ? o : o.title;
+              const body = typeof o === "string" ? null : o.body;
+              return (
+                <motion.div
+                  key={title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.6, delay: i * 0.08 }}
+                  className="flex items-start gap-4 p-6 md:p-8 border border-paper/15 bg-ink-deep"
+                  data-testid={`pillar-outcome-${i}`}
+                >
+                  <div className="w-9 h-9 rounded-full bg-orange-brand text-paper flex items-center justify-center shrink-0">
+                    <Check className="w-4 h-4" strokeWidth={2.2} />
                   </div>
-                  <div className="font-editorial text-[22px] md:text-[24px] leading-[1.15] tracking-tight">
-                    {o}
+                  <div className="pt-1">
+                    <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-paper/50 mb-1">
+                      Outcome {String(i + 1).padStart(2, "0")}
+                    </div>
+                    <div className="font-editorial text-[22px] md:text-[24px] leading-[1.15] tracking-tight">
+                      {title}
+                    </div>
+                    {body && (
+                      <p className="mt-3 text-[14.5px] leading-[1.6] text-paper/70">
+                        {body}
+                      </p>
+                    )}
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
