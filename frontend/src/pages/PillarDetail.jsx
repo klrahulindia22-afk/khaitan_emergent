@@ -299,7 +299,7 @@ export default function PillarDetail() {
           <div className="md:col-span-8">
             {[
               { n: "01", t: "Baseline diagnostic", b: "One week on-campus to map the current operating standard." },
-              { n: "02", t: "Playbook install", b: "SOPs, dashboards, review cadence and owner map — configured for your context." },
+              { n: "02", t: "Operating Systems install", b: "SOPs, dashboards, review cadence and owner map — configured for your context." },
               { n: "03", t: "Resident squad", b: "Our operators pair with your team through the first two review cycles." },
               { n: "04", t: "Handover", b: "We hand control back with a certification of your internal operators." },
             ].map((step, i) => (
