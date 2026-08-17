@@ -121,8 +121,11 @@ export default function PillarDetail() {
 
           <div className="mt-14 grid md:grid-cols-2 gap-4 md:gap-5">
             {pillar.outcomes.map((o, i) => {
-              const title = typeof o === "string" ? o : o.title;
-              const body = typeof o === "string" ? null : o.body;
+              const isString = typeof o === "string";
+              const title = isString ? o : o.title;
+              const body = isString ? null : o.body;
+              const bullets = isString ? null : o.bullets;
+              const footer = isString ? null : o.footer;
               return (
                 <motion.div
                   key={title}
@@ -136,7 +139,7 @@ export default function PillarDetail() {
                   <div className="w-9 h-9 rounded-full bg-orange-brand text-paper flex items-center justify-center shrink-0">
                     <Check className="w-4 h-4" strokeWidth={2.2} />
                   </div>
-                  <div className="pt-1">
+                  <div className="pt-1 flex-1">
                     <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-paper/50 mb-1">
                       Outcome {String(i + 1).padStart(2, "0")}
                     </div>
@@ -146,6 +149,21 @@ export default function PillarDetail() {
                     {body && (
                       <p className="mt-3 text-[14.5px] leading-[1.6] text-paper/70">
                         {body}
+                      </p>
+                    )}
+                    {bullets && bullets.length > 0 && (
+                      <ul className="mt-4 space-y-1.5 text-[14px] leading-[1.55] text-paper/80">
+                        {bullets.map((b) => (
+                          <li key={b} className="flex gap-2.5">
+                            <span className="text-orange-brand mt-1.5 w-1 h-1 rounded-full bg-orange-brand shrink-0" />
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {footer && (
+                      <p className="mt-4 pt-4 border-t border-paper/10 text-[13.5px] italic leading-[1.55] font-editorial-soft text-paper/60">
+                        {footer}
                       </p>
                     )}
                   </div>

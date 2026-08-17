@@ -11,16 +11,71 @@ export const pillars = [
       "An operating system for K-12 pedagogy — from annual plans down to a single lesson. Eight core modules that make every subject, every section, every week reproducible.",
     outcomes: [
       {
-        title: "One-click alignment",
-        body: "The academic OS ensures that everything from the Annual Pedagogical Plan (APP) to student study notes are automatically aligned with NCF and NEP guidelines with a single button click.",
+        title: "Curriculum Integrity",
+        body: "Every lesson, assessment and activity remains aligned with the frameworks that define quality K–12 education.",
+        bullets: [
+          "National Education Policy (NEP 2020)",
+          "National Curriculum Framework (NCF)",
+          "NCERT",
+          "CBSE / State Board guidelines",
+          "School vision and learning outcomes",
+        ],
+        footer: "Curriculum never drifts from its intended purpose.",
       },
       {
-        title: "Automated quality control",
-        body: 'By moving from structured documents to a fully automated platform, the system removes the "discretionary" element that leads to errors.',
+        title: "Consistent Classroom Delivery",
+        body: "Students deserve the same standard of teaching regardless of teacher, section, campus or academic year.",
+        footer: "Consistency creates fairness. Consistency improves learning. Consistency strengthens institutional reputation.",
       },
       {
-        title: "System-controlled quality",
-        body: "Instead of relying on a Principal to check 12,000 plans, the Academic OS acts as the infrastructure layer — ensuring every piece of content is pre-validated and standardised across all campuses.",
+        title: "Teacher Enablement",
+        body: "Teachers never work in isolation. They are supported by a full stack of planning and observation tools.",
+        bullets: [
+          "Annual Academic Plans",
+          "Annual Pedagogical Plans",
+          "Lesson Plans & Teacher Logs",
+          "Classroom Observation Tools",
+          "Teaching Resources",
+          "Assessment Frameworks",
+          "Professional Learning Communities",
+        ],
+        footer: "Great teachers become even better when supported by excellent systems.",
+      },
+      {
+        title: "Student-Centred Learning",
+        body: "Academic planning begins with one question: what should students understand, demonstrate and become capable of doing?",
+        bullets: [
+          "Conceptual understanding",
+          "Critical thinking",
+          "Collaboration & communication",
+          "Creativity",
+          "Character development",
+          "Problem solving & application of knowledge",
+        ],
+        footer: "Academic success extends beyond examination performance.",
+      },
+      {
+        title: "Continuous Assessment",
+        body: "Assessment is not merely a tool for assigning grades. It is a mechanism for improving learning.",
+        bullets: [
+          "Identify learning gaps",
+          "Inform instructional planning",
+          "Provide timely feedback",
+          "Support differentiated instruction",
+          "Guide intervention strategies",
+        ],
+        footer: "Assessment drives improvement rather than simply measures outcomes.",
+      },
+      {
+        title: "Continuous Improvement",
+        body: "Academic excellence is never static. Every cycle concludes with reflection.",
+        bullets: [
+          "Which learning objectives were achieved?",
+          "Which pedagogical approaches were most effective?",
+          "Where did students struggle?",
+          "Which interventions produced measurable improvement?",
+        ],
+        footer: "These insights become the foundation for the next cycle of planning.",
       },
     ],
     image:
@@ -85,20 +140,42 @@ export const pillars = [
       "Designed for school owners, internal and external auditors, and institutional leadership to drive accountability and performance excellence.",
     outcomes: [
       {
-        title: "Role-wise KPIs & SOPs",
-        body: "Clear, role-specific KPIs and detailed SOPs across every function — a corporate-style governance framework that removes ambiguity and person-dependence.",
+        title: "Review the System Before the Individual",
+        body: "When outcomes decline, professional management first asks whether the system itself was set up to succeed.",
+        bullets: [
+          "Was the process clearly defined?",
+          "Were adequate resources available?",
+          "Was sufficient training provided?",
+          "Were expectations understood?",
+          "Was performance monitored regularly?",
+        ],
+        footer: "People operate within systems. Improving systems often improves individual performance.",
       },
       {
-        title: "The management blueprint",
-        body: "A handbook that codifies performance measurement, accountability and strategic planning — explaining what needs to be done and why, so every leader operates from the same script.",
+        title: "Measure What Matters",
+        body: "Not everything important can be measured — but everything critical should be monitored through meaningful indicators.",
+        bullets: ["Activity", "Output", "Outcome", "Impact"],
+        footer: "Completing tasks is different from creating results. Reviews focus on outcomes, not activity alone.",
       },
       {
-        title: "Real-time execution platform",
-        body: "Digitised performance tracking, departmental target monitoring, standardised workflows and real-time reports — turning intent into daily execution.",
+        title: "Reviews Drive Improvement",
+        body: "Reviews are not disciplinary events — they are learning opportunities. Every review answers three questions.",
+        bullets: [
+          "What worked well?",
+          "What did not work as expected?",
+          "What should improve before the next review?",
+        ],
+        footer: "This creates a culture of continuous learning.",
       },
       {
-        title: "Institutionally scaled outcomes",
-        body: "Stronger admissions, tighter financial discipline, higher parent satisfaction and sustainable scaling — with reduced dependence on the promoter.",
+        title: "Data Inform Dialogue",
+        body: "Dashboards, reports and analytics are valuable — but numbers do not improve schools. Meaningful conversations do.",
+        footer: "Data support thoughtful discussions rather than replace professional judgement.",
+      },
+      {
+        title: "Accountability is Constructive",
+        body: "The objective of accountability is improvement — not fear, not blame, not punishment.",
+        footer: "Employees perform better when accountability is transparent, fair and developmental.",
       },
     ],
     image:
@@ -151,10 +228,30 @@ export const pillars = [
     description:
       "The Playbook covers 10 institutional operating systems, from governance to quality assurance. The AI agent then activates the right SOP at the right moment.",
     outcomes: [
-      "Contextual SOP activation",
-      "Anomaly detection & alerts",
-      "Auto-drafted communications",
-      "Institutional memory in one place",
+      {
+        title: "AI-powered operational knowledge assistant",
+        body: "The Playbook Agent makes the Khaitan School Operating Manual accessible and actionable, letting school leaders and staff work directly from institutional standards.",
+        bullets: [
+          "Access policies instantly",
+          "Understand standard operating procedures",
+          "Retrieve templates and formats",
+          "Receive step-by-step guidance",
+          "Clarify roles and responsibilities",
+          "Support decision making based on institutional standards",
+        ],
+      },
+      {
+        title: "Consistent operational standards",
+        body: "Every department operates from the same script — SOPs, policies and templates are one query away for everyone.",
+      },
+      {
+        title: "Reduced dependence on individuals",
+        body: "Institutional knowledge no longer walks out with a single person. The system carries the memory.",
+      },
+      {
+        title: "One integrated organisation",
+        body: "Higher operational efficiency and cross-department alignment — the school evolves from a collection of departments into one institution.",
+      },
     ],
     image:
       "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1600&auto=format&fit=crop",
@@ -226,10 +323,33 @@ export const pillars = [
     description:
       "Not another ERP. KOSMOS is the transactional backbone of the EduOps model — designed so every SOP has a rail and every rail has a receipt.",
     outcomes: [
-      "One record per student, forever",
-      "Fees & finance with audit trails",
-      "Attendance, timetable, HRMS",
-      "Mobile-first parent & staff apps",
+      {
+        title: "An aligned technology ecosystem",
+        body: "KOSMOS and the Flow Management System (FMS) are integrated enablers of the school management platform — not standalone software products. Schools implementing KOSMOS see measurable operational shifts.",
+        bullets: [
+          "Greater operational consistency",
+          "Reduced administrative workload",
+          "Better visibility across departments",
+          "Faster decision making",
+          "Higher technology adoption",
+          "Improved stakeholder communication",
+          "Preservation of institutional knowledge",
+        ],
+        footer: "A technology ecosystem aligned with educational outcomes rather than isolated administrative tasks.",
+      },
+      {
+        title: "Workflow-guided execution (FMS)",
+        body: "The Flow Management System guides users through complete operational workflows — telling the school what should happen next, not just what has happened.",
+        bullets: [
+          "New student admission workflows",
+          "Teacher onboarding journeys",
+          "Academic execution cycles",
+          "Parent grievance resolution",
+          "Procurement approvals",
+          "Staff performance reviews",
+        ],
+        footer: "Technology moves from a record-keeping system to an execution support system.",
+      },
     ],
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
@@ -291,10 +411,72 @@ export const pillars = [
     description:
       "Structured, practical and impactful learning programs that build capability across the entire leadership and staff stack.",
     outcomes: [
-      "Certified operator ladders",
-      "Observed teaching practice",
-      "Leadership readiness index",
-      "Peer benchmarking across group",
+      {
+        title: "Promoters & School Owners",
+        body: "Professional school ownership extends beyond investment. Promoter capability is built across the levers that decide institutional health.",
+        bullets: [
+          "Educational governance",
+          "Strategic planning",
+          "Financial sustainability",
+          "Institutional culture",
+          "Risk management",
+          "Expansion planning",
+          "Leadership oversight",
+        ],
+        footer: "The objective is to enable promoters to govern institutions rather than manage daily operations.",
+      },
+      {
+        title: "School Leadership",
+        body: "Principals, Vice Principals and Academic Heads are trained in the disciplines that shape every classroom.",
+        bullets: [
+          "Instructional leadership",
+          "Organisational leadership",
+          "Performance management",
+          "Decision-making & coaching",
+          "Conflict resolution",
+          "Strategic execution",
+          "Change management",
+        ],
+        footer: "Leadership capability influences every aspect of school performance.",
+      },
+      {
+        title: "Teachers",
+        body: "Teachers remain the most influential contributors to student learning. Professional development is deliberate and continuous.",
+        bullets: [
+          "Classroom management",
+          "Pedagogical excellence",
+          "Lesson design",
+          "Assessment literacy",
+          "Student engagement",
+          "Inclusive education",
+          "Technology integration",
+          "Reflective practice",
+        ],
+        footer: "Confident educators delivering consistent learning experiences.",
+      },
+      {
+        title: "Functional Leaders",
+        body: "Department heads' capability is built within their respective domains — admissions, finance, HR, transport, compliance and more, each with structured learning pathways.",
+        bullets: [
+          "Admissions — counselling, relationship management, conversion analytics",
+          "Finance — budget control, fee strategy, financial governance",
+          "Human Resources — recruitment, performance, engagement",
+          "Transport — safety, fleet operations, compliance",
+        ],
+      },
+      {
+        title: "Operational Staff",
+        body: "Administrative, front-office, estate and support teams significantly influence stakeholder experience. Capability development is treated with the same rigour.",
+        bullets: [
+          "Customer service",
+          "Communication",
+          "Digital literacy",
+          "Standard operating procedures",
+          "Workplace professionalism",
+          "Health and safety",
+        ],
+        footer: "Every employee contributes to institutional quality.",
+      },
     ],
     image:
       "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1600&auto=format&fit=crop",
@@ -336,10 +518,35 @@ export const pillars = [
     description:
       "We do not deliver decks. Transformation Services embeds operators inside your school for the duration it takes to make the system self-run.",
     outcomes: [
-      "90-day operating diagnostic",
-      "Resident transformation squad",
-      "Milestone-linked engagement",
-      "Handover to internal operators",
+      {
+        title: "Transformation Begins with Leadership",
+        body: "Institutions change only when leadership changes. Transformation therefore begins at the top.",
+        bullets: [
+          "Promoter commitment",
+          "Leadership alignment",
+          "Shared vision",
+          "Organisational readiness",
+        ],
+        footer: "Without leadership ownership, sustainable transformation cannot occur.",
+      },
+      {
+        title: "Diagnose Before Prescribing",
+        body: "Every school is unique. No two institutions share the same history, culture or challenges — so transformation begins with understanding the current reality.",
+        footer: "Recommendations should always be based on evidence rather than assumptions.",
+      },
+      {
+        title: "Systems Before Technology",
+        body: "Technology supports transformation. It does not create it. Processes are first designed, responsibilities clarified, governance established — then technology automates execution.",
+      },
+      {
+        title: "Capability Before Compliance",
+        body: "Employees should understand why systems exist. Training develops ownership rather than mere compliance.",
+        footer: "People who understand purpose sustain transformation.",
+      },
+      {
+        title: "Transformation Never Ends",
+        body: "Professional institutions continuously evolve. Transformation becomes an ongoing organisational capability rather than a one-time project.",
+      },
     ],
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
