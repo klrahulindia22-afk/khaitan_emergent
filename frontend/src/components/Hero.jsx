@@ -104,10 +104,10 @@ export const Hero = () => {
               </span>
             </Link>
             <a
-              href="#problem"
+              href="#model"
               onClick={(e) => {
                 e.preventDefault();
-                const el = document.getElementById("problem");
+                const el = document.getElementById("model");
                 if (window.__lenis) window.__lenis.scrollTo(el, { duration: 1.5 });
                 else el?.scrollIntoView({ behavior: "smooth" });
               }}
