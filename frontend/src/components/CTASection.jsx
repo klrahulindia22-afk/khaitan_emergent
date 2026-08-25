@@ -35,7 +35,7 @@ export const CTASection = () => {
 
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <Link
-            to="/contact"
+            to="/contact#demo"
             className="group inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-full bg-ink text-paper hover:bg-orange-brand transition-colors"
             data-testid="cta-book-demo"
           >

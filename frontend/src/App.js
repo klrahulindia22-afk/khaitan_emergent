@@ -10,14 +10,29 @@ import Contact from "@/pages/Contact";
 import PillarDetail from "@/pages/PillarDetail";
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
+    if (hash) {
+      // Delay to allow the target route to render before scrolling
+      const id = hash.replace(/^#/, "");
+      const attempt = (tries = 0) => {
+        const el = document.getElementById(id);
+        if (el) {
+          if (window.__lenis) window.__lenis.scrollTo(el, { duration: 1.2 });
+          else el.scrollIntoView({ behavior: "smooth" });
+        } else if (tries < 20) {
+          setTimeout(() => attempt(tries + 1), 60);
+        }
+      };
+      attempt();
+      return;
+    }
     if (window.__lenis) {
       window.__lenis.scrollTo(0, { immediate: true });
     } else {
       window.scrollTo(0, 0);
     }
-  }, [pathname]);
+  }, [pathname, hash]);
   return null;
 };
 

@@ -52,7 +52,7 @@ export default function Contact() {
           <ContactBlock num="01" kicker="Write to us" title="Contact form">
             <ContactForm />
           </ContactBlock>
-          <ContactBlock num="02" kicker="Schedule a walkthrough" title="Book a demo">
+          <ContactBlock id="demo" num="02" kicker="Schedule a walkthrough" title="Book a demo">
             <DemoForm />
           </ContactBlock>
         </div>

@@ -312,8 +312,9 @@ export const DemoForm = () => {
   );
 };
 
-export const ContactBlock = ({ children, title, num, kicker }) => (
+export const ContactBlock = ({ children, title, num, kicker, id }) => (
   <motion.div
+    id={id}
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-80px" }}

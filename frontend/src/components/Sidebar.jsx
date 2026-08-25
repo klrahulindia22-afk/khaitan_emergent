@@ -178,7 +178,7 @@ export const Sidebar = () => {
               })}
             </nav>
             <Link
-              to="/contact"
+              to="/contact#demo"
               className="hidden md:inline-flex items-center gap-2 pl-4 pr-1 py-1 rounded-full bg-ink text-paper hover:bg-orange-brand transition-colors group"
               data-testid="topbar-book-demo"
             >
@@ -289,7 +289,7 @@ const MobileNav = ({ active, onNav, location, setOpen }) => (
     </div>
 
     <Link
-      to="/contact"
+      to="/contact#demo"
       onClick={() => setOpen(false)}
       className="inline-flex items-center justify-between gap-2 px-6 py-4 rounded-full bg-orange-brand text-paper mt-2"
       data-testid="mobile-book-demo"

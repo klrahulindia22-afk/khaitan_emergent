@@ -129,7 +129,7 @@ export const Footer = () => {
           </ul>
 
           <Link
-            to="/contact"
+            to="/contact#demo"
             className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 rounded-full bg-orange-brand text-paper text-[13px] font-medium hover:-translate-y-0.5 transition-transform"
             data-testid="footer-book-demo"
           >
