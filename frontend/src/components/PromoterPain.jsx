@@ -92,7 +92,7 @@ export const PromoterPain = () => {
 
         <div className="mt-10 grid md:grid-cols-12 gap-8 items-start">
           <div className="md:col-span-1 flex md:justify-end">
-            <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-orange-brand pt-1">
+            <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-orange-bright pt-1">
               Core
             </span>
           </div>

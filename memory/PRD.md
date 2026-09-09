@@ -22,39 +22,51 @@ Secondary: Heads of School, Coordinators, EduOps buyers.
 - Backend endpoints to store both submissions in MongoDB
 - Award-worthy motion: masked line-by-line hero reveal, parallax, marquee,
   scroll reveals, micro-interactions
-- Brand: dark ink navy + cream paper + orange accent, Fraunces + Manrope fonts
+- Brand: NEW logo-based palette (see v3 below), Fraunces + Manrope + Nunito
 
 ## Implemented (Dec 2025 — v1)
-- Frontend
-  - Sidebar (desktop + mobile drawer) with active-section tracking
-  - Kinetic Hero with masked reveal, parallax spotlight image, ambient rings
-  - Problem section (3 cards)
-  - Promoter Pain Points (numbered manifesto rows on dark ink)
-  - Editorial Marquee (slow, italic Fraunces)
-  - Compliance & Volume Gap (data-viz block, parallax card)
-  - Differentiator (EdTech vs ERP vs EduOps table)
-  - 7 Pillars grid with clipped-corner cards, per-pillar detail page
-  - CTA section + Footer (mega wordmark)
-  - About page (origin, principles, leadership grid)
-  - Contact page (contact form + demo booking form)
-  - Lenis smooth scroll, framer-motion animations
-- Backend
-  - POST /api/contact, GET /api/contact
-  - POST /api/demo, GET /api/demo
-  - GET /api/health, GET /api/
-  - MongoDB storage in `contact_submissions` and `demo_submissions`
+- Frontend: Sidebar, kinetic Hero, Problem, Promoter Pain manifesto, Marquee,
+  Compliance Gap, Differentiator, 7 Pillars grid + detail pages, CTA, Footer,
+  About page, Contact page (contact + demo forms), Lenis + framer-motion
+- Backend: POST/GET /api/contact, POST/GET /api/demo, /api/health; MongoDB
+  storage in `contact_submissions` and `demo_submissions`
 
 ## Implemented (Feb 2026 — v2)
-- Industry Leaders section: 2x2 editorial grid with dummy video players +
-  expert names, titles, italic pull-quotes and summaries. Wired into Landing.
-  File: `/app/frontend/src/components/IndustryLeaders.jsx`. Visually verified
-  via screenshot — matches editorial design language.
+- Industry Leaders (Voices) section: 2x2 editorial grid, dummy video players
+  (SVG placeholders pending real assets), expert names/quotes
+
+## Implemented (Sep 2026 — v3, REBRAND)
+- New logo (user-provided: navy + sky-blue leaf mark, "Khaitan EduOps"
+  wordmark) processed into transparent assets: `src/assets/logo-full.png`,
+  `logo-mark.png`, `logo-white.png`; exported via `src/data/brand.js`
+  (LOGO_URL / LOGO_MARK_URL / LOGO_WHITE_URL). Used in Sidebar header, Footer,
+  Differentiator ring badge (mark only). Favicon regenerated from the mark.
+- Full colour re-theme to match logo (all via CSS vars in index.css):
+  paper #f7fafd (ice white), ink #0a1f38 (deep navy), navy #104080 (logo navy),
+  accent var `--orange` repurposed to sky blue #1289c6 (+ `--orange-bright`
+  #2ba5de for small on-dark labels), shadcn HSL tokens updated.
+  SVG illustration constants updated in AboutIllustration / VoiceIllustration /
+  PillarIllustration. Verified: zero orange pixels on all pages (iteration_2).
+- Earlier v2.5: rich pillar outcomes, contact details update, color founder
+  photos, "Read the manifesto" → #differentiator, all demo links → /contact#demo
+  with Lenis hash scroll in App.js
+
+## Key Architecture Notes
+- Theme = CSS vars in index.css; components use utility classes
+  (text-ink, bg-paper, text-orange-brand = blue accent). Never hardcode hex.
+- App.js manages hash routing → window.__lenis.scrollTo; preserve when adding
+  hash links.
+- pillars.js `outcomes` = objects {title, body, bullets[], footer}.
+- Logo assets: never hotlink customer-assets URLs; use src/assets imports.
 
 ## Backlog / Next
-- P1: Replace Industry Leaders dummy videos + expert content with real assets
+- P0: Replace Industry Leaders dummy videos with real footage (user assets)
+- P1: Division Landing Pages (7 divisions, like PillarDetail)
+- P1: Voices Archive page with role filters
 - P1: Wire real email notifications (Resend) on new submissions
 - P1: Admin dashboard to review submissions
-- P2: Add Case Studies / Group Portfolio page
-- P2: Add multilingual toggle (EN / HI)
-- P2: Custom cursor + audio ambient toggle for award submission
+- P2: Case Studies / Group Portfolio page
+- P2: Multilingual toggle (EN / HI)
+- P2: Custom cursor + audio ambient toggle
 - P2: Analytics + heat-map integration
+- Chore: silence framer-motion useScroll non-static-position warning

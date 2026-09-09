@@ -1,8 +1,8 @@
 // Editorial illustrations for the About page.
 
-const CREAM = "#F5F1EA";
-const INK = "#0A1628";
-const ORANGE = "#FF5C1F";
+const CREAM = "#F7FAFD";
+const INK = "#0A1F38";
+const ORANGE = "#1289C6";
 const INK_60 = "rgba(10,22,40,0.6)";
 const INK_15 = "rgba(10,22,40,0.15)";
 const PAPER_15 = "rgba(245,241,234,0.15)";

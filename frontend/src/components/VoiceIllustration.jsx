@@ -1,10 +1,10 @@
 // Editorial placeholder illustrations for Industry Leaders "Voices".
 // Rendered while awaiting real portraits/videos. Palette matches site brand.
 
-const CREAM = "#F5F1EA";
-const PAPER = "#FBF6EE";
-const INK = "#0A1628";
-const ORANGE = "#FF5C1F";
+const CREAM = "#F7FAFD";
+const PAPER = "#FDFEFF";
+const INK = "#0A1F38";
+const ORANGE = "#1289C6";
 const INK_60 = "rgba(10,22,40,0.6)";
 const INK_25 = "rgba(10,22,40,0.25)";
 const INK_10 = "rgba(10,22,40,0.08)";

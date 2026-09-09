@@ -24,7 +24,7 @@ import {
   Puzzle,
 } from "lucide-react";
 import { ChapterHead } from "./ProblemSection";
-import { LOGO_URL } from "../data/brand";
+import { LOGO_MARK_URL } from "../data/brand";
 
 const categories = [
   {
@@ -248,9 +248,9 @@ export const Differentiator = () => {
             <div className="absolute inset-[10%] border border-dashed border-ink/15 rounded-full" />
             <div className="absolute inset-[24%] border border-ink/10 rounded-full" />
             {/* Center — Logo */}
-            <div className="absolute inset-[44%] rounded-full bg-paper flex items-center justify-center shadow-[0_1px_0_0_rgba(10,22,40,0.06)] p-1.5">
+            <div className="absolute inset-[44%] rounded-full bg-paper flex items-center justify-center shadow-[0_1px_0_0_rgba(10,22,40,0.06)] p-2.5">
               <img
-                src={LOGO_URL}
+                src={LOGO_MARK_URL}
                 alt="Khaitan EduOps"
                 className="w-full h-full object-contain"
                 draggable={false}
@@ -325,7 +325,7 @@ export const Differentiator = () => {
               </div>
             </div>
             <div className="pt-6 border-t border-paper/15">
-              <div className="text-[10px] uppercase tracking-[0.22em] text-orange-brand mb-3">
+              <div className="text-[10px] uppercase tracking-[0.22em] text-orange-bright mb-3">
                 Khaitan EduOps
               </div>
               <div className="flex flex-col gap-2">

@@ -7,40 +7,40 @@
 @layer base {
     :root {
         /* Brand palette */
-        --ink: #0a1628;
-        --ink-deep: #050d1a;
-        --navy: #002147;
-        --paper: #f5f1ea;
-        --paper-warm: #ede7dc;
-        --cream: #faf7f0;
-        --orange: #ff5c1f;
-        --orange-bright: #ff7a3d;
-        --electric: #3b4eff;
-        --electric-bright: #5568ff;
-        --slate: #5b6472;
-        --line: rgba(10, 22, 40, 0.12);
-        --line-soft: rgba(10, 22, 40, 0.06);
+        --ink: #0a1f38;
+        --ink-deep: #051426;
+        --navy: #104080;
+        --paper: #f7fafd;
+        --paper-warm: #ebf1f7;
+        --cream: #fdfeff;
+        --orange: #1289c6;
+        --orange-bright: #2ba5de;
+        --electric: #104080;
+        --electric-bright: #2a6bb0;
+        --slate: #52657a;
+        --line: rgba(10, 31, 56, 0.12);
+        --line-soft: rgba(10, 31, 56, 0.06);
 
         /* Shadcn */
-        --background: 43 33% 94%;
-        --foreground: 217 65% 10%;
-        --card: 43 33% 94%;
-        --card-foreground: 217 65% 10%;
-        --popover: 43 33% 94%;
-        --popover-foreground: 217 65% 10%;
-        --primary: 217 100% 14%;
-        --primary-foreground: 43 33% 94%;
-        --secondary: 40 27% 89%;
-        --secondary-foreground: 217 65% 10%;
-        --muted: 40 27% 89%;
-        --muted-foreground: 217 12% 40%;
-        --accent: 16 100% 56%;
-        --accent-foreground: 43 33% 94%;
+        --background: 210 60% 98%;
+        --foreground: 215 70% 13%;
+        --card: 210 60% 98%;
+        --card-foreground: 215 70% 13%;
+        --popover: 210 60% 98%;
+        --popover-foreground: 215 70% 13%;
+        --primary: 213 78% 28%;
+        --primary-foreground: 210 60% 98%;
+        --secondary: 210 43% 94%;
+        --secondary-foreground: 215 70% 13%;
+        --muted: 210 43% 94%;
+        --muted-foreground: 215 14% 42%;
+        --accent: 199 82% 42%;
+        --accent-foreground: 210 60% 98%;
         --destructive: 0 84% 60%;
-        --destructive-foreground: 43 33% 94%;
-        --border: 217 20% 88%;
-        --input: 217 20% 88%;
-        --ring: 217 100% 14%;
+        --destructive-foreground: 210 60% 98%;
+        --border: 212 26% 88%;
+        --input: 212 26% 88%;
+        --ring: 213 78% 28%;
         --radius: 0.25rem;
     }
 
@@ -112,6 +112,9 @@
     }
     .text-orange-brand {
         color: var(--orange);
+    }
+    .text-orange-bright {
+        color: var(--orange-bright);
     }
     .text-electric {
         color: var(--electric);
