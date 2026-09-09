@@ -109,7 +109,7 @@ export const ComplianceGap = () => {
           <p className="text-[16px] md:text-[17px] leading-[1.6] text-ink/75 max-w-xl">
             You do not fix this by hiring more supervisors. You fix it by
             replacing supervision with{" "}
-            <em className="font-editorial-soft italic text-ink">
+            <em className="font-editorial-soft italic text-ink text-[20px] md:text-[22px]">
               Compliance by Design
             </em>{" "}
             — where every workflow has a rail, every rail has a receipt, and
