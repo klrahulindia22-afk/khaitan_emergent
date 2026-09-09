@@ -42,7 +42,9 @@ Secondary: Heads of School, Coordinators, EduOps buyers.
   (LOGO_URL / LOGO_MARK_URL / LOGO_WHITE_URL). Used in Sidebar header, Footer,
   Differentiator ring badge (mark only). Favicon regenerated from the mark.
 - Full colour re-theme to match logo (all via CSS vars in index.css):
-  paper #f7fafd (ice white), ink #0a1f38 (deep navy), navy #104080 (logo navy),
+  paper #ffffff (pure white, per user request), paper-warm #ebf1f7 kept for
+  alternating section contrast, ink #0a1f38 (deep navy), navy #104080
+  (logo navy),
   accent var `--orange` repurposed to sky blue #1289c6 (+ `--orange-bright`
   #2ba5de for small on-dark labels), shadcn HSL tokens updated.
   SVG illustration constants updated in AboutIllustration / VoiceIllustration /

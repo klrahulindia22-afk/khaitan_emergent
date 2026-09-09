@@ -10,9 +10,9 @@
         --ink: #0a1f38;
         --ink-deep: #051426;
         --navy: #104080;
-        --paper: #f7fafd;
+        --paper: #ffffff;
         --paper-warm: #ebf1f7;
-        --cream: #fdfeff;
+        --cream: #ffffff;
         --orange: #1289c6;
         --orange-bright: #2ba5de;
         --electric: #104080;
@@ -22,11 +22,11 @@
         --line-soft: rgba(10, 31, 56, 0.06);
 
         /* Shadcn */
-        --background: 210 60% 98%;
+        --background: 0 0% 100%;
         --foreground: 215 70% 13%;
-        --card: 210 60% 98%;
+        --card: 0 0% 100%;
         --card-foreground: 215 70% 13%;
-        --popover: 210 60% 98%;
+        --popover: 0 0% 100%;
         --popover-foreground: 215 70% 13%;
         --primary: 213 78% 28%;
         --primary-foreground: 210 60% 98%;

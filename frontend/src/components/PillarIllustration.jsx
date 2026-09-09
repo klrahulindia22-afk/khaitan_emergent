@@ -1,7 +1,7 @@
 // Editorial SVG illustrations for each pillar.
 // Design language: cream ground, ink linework, orange accent, geometric print aesthetic.
 
-const CREAM = "#F7FAFD";
+const CREAM = "#FFFFFF";
 const INK = "#0A1F38";
 const ORANGE = "#1289C6";
 const INK_60 = "rgba(10,22,40,0.6)";
