@@ -225,7 +225,7 @@ export const StrategicAdvantage = () => {
 
           {/* Khaitan understanding — 5 rare disciplines */}
           <div className="lg:col-span-7 bg-ink text-paper p-7 md:p-10">
-            <div className="text-[10px] uppercase tracking-[0.22em] text-orange-brand mb-5">
+            <div className="text-[14px] uppercase tracking-[0.22em] text-orange-bright mb-5">
               We understand
             </div>
             <ul className="grid sm:grid-cols-2 gap-3">
