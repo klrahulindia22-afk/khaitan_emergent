@@ -21,7 +21,7 @@ export const SevenPillars = () => {
             Chapter
           </span>
           <span className="font-mono text-[13px] uppercase tracking-[0.2em] text-paper mt-1">
-            The 7 Pillars
+            The 8 Pillars
           </span>
         </div>
         <span className="hidden md:block flex-1 h-px bg-paper/20 ml-6" />
@@ -34,7 +34,7 @@ export const SevenPillars = () => {
         transition={{ duration: 0.9 }}
         className="font-editorial text-[9vw] md:text-[6.2vw] lg:text-[4.6vw] leading-[0.9] tracking-[-0.035em] mt-6 max-w-5xl"
       >
-        Seven pillars.{" "}
+        Eight pillars.{" "}
         <span className="italic font-editorial-soft text-orange-brand">
           One operating system
         </span>{" "}

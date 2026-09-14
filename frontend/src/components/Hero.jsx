@@ -12,6 +12,7 @@ const briefs = {
   "eduops-academy": "Capability building for the entire leadership stack.",
   "transformation-services": "Resident squad on-ground for 90 days.",
   "corporate-services": "Group office as a shared services layer.",
+  "online-coaching": "AI tutor + verified experts for every learning gap.",
 };
 
 const line1 = ["Schools", "deserve"];
@@ -134,7 +135,7 @@ export const Hero = () => {
               data-testid="hero-pillars-heading"
             >
               <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-orange-brand">
-                07
+                08
               </span>
               <h2 className="font-mono text-[11px] uppercase tracking-[0.24em] text-ink/70">
                 Pillars of the Operating System
@@ -178,41 +179,6 @@ export const Hero = () => {
                   </Link>
                 </motion.div>
               ))}
-              {/* 8th cell — Explore all CTA */}
-              <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.55 }}
-                className="border-r border-b border-ink/15"
-              >
-                <Link
-                  to="/#pillars"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const el = document.getElementById("pillars");
-                    if (window.__lenis)
-                      window.__lenis.scrollTo(el, { duration: 1.6 });
-                    else el?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className="group flex flex-col justify-between h-full p-4 md:p-5 bg-orange-brand text-paper hover:brightness-110 transition-all min-h-[136px]"
-                  data-testid="hero-pillar-explore"
-                >
-                  <div className="flex items-start justify-between gap-2">
-                    <span className="font-mono text-[11px] uppercase tracking-[0.2em] opacity-80">
-                      Explore
-                    </span>
-                    <ArrowUpRight className="w-4 h-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                  </div>
-                  <div className="mt-2">
-                    <div className="font-editorial text-[19px] md:text-[21px] leading-[1.05] tracking-tight">
-                      See all pillars
-                    </div>
-                    <div className="text-[13px] leading-[1.45] mt-2 opacity-80">
-                      One operating stack.
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
             </div>
           </motion.div>
         </div>

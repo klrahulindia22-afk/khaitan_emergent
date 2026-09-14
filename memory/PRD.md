@@ -53,6 +53,17 @@ Secondary: Heads of School, Coordinators, EduOps buyers.
   photos, "Read the manifesto" → #differentiator, all demo links → /contact#demo
   with Lenis hash scroll in App.js
 
+## Implemented (Sep 2026 — v3.1, Pillar 08)
+- Added Pillar 08 "Online Coaching & Personalised Learning" (slug
+  `online-coaching`) from user-provided docx: rich outcomes (Focused Support,
+  Better Understanding w/ 7 explanation-mode bullets, Clear Direction for
+  Parents, Progress That Updates Itself), 2 modules (Personal AI Tutor,
+  Private Tutor), custom SVG illustration (`Online` in PillarIllustration.jsx)
+- Updated counts site-wide: Hero "08 PILLARS" + hero grid now 8 cells
+  (explore filler cell removed), SevenPillars "The 8 Pillars" / "Eight pillars."
+- Verified: hero grid 4x2 clean, 8 pillar cards, /pillars/online-coaching
+  detail page (4 outcomes, 2 modules, next-pillar loops to 01)
+
 ## Key Architecture Notes
 - Theme = CSS vars in index.css; components use utility classes
   (text-ink, bg-paper, text-orange-brand = blue accent). Never hardcode hex.

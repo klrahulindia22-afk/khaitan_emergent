@@ -370,6 +370,58 @@ const Corporate = () => (
   </Frame>
 );
 
+// 08 — Online Coaching : laptop with tutor pane, AI spark, explanation modes
+const Online = () => (
+  <Frame>
+    <g transform="translate(170 110)">
+      {/* laptop screen */}
+      <rect x="0" y="0" width="460" height="300" fill={CREAM} stroke={INK} strokeWidth="2" />
+      <rect x="0" y="0" width="460" height="34" fill={INK} />
+      <circle cx="20" cy="17" r="5" fill={ORANGE} />
+      <rect x="36" y="13" width="120" height="7" fill={CREAM} />
+      {/* private tutor pane */}
+      <rect x="24" y="56" width="200" height="150" fill="none" stroke={INK} strokeWidth="1.5" />
+      <circle cx="124" cy="116" r="34" fill={ORANGE} />
+      <circle cx="124" cy="106" r="12" fill={CREAM} />
+      <path d="M 102 142 Q 124 122 146 142" stroke={CREAM} strokeWidth="6" fill="none" />
+      <text x="124" y="196" textAnchor="middle" fontFamily="ui-monospace" fontSize="9" letterSpacing="2" fill={INK_60}>
+        PRIVATE TUTOR
+      </text>
+      {/* AI tutor pane */}
+      <rect x="248" y="56" width="188" height="150" fill="none" stroke={INK} strokeWidth="1.5" strokeDasharray="5 5" />
+      <path d="M 342 102 L 349 121 L 368 128 L 349 135 L 342 154 L 335 135 L 316 128 L 335 121 Z" fill={ORANGE} />
+      <text x="342" y="196" textAnchor="middle" fontFamily="ui-monospace" fontSize="9" letterSpacing="2" fill={INK_60}>
+        AI TUTOR
+      </text>
+      {/* explanation mode chips */}
+      {["STORY", "VISUAL", "GAME", "MUSIC"].map((k, i) => (
+        <g key={k}>
+          <rect x={24 + i * 105} y="224" width="92" height="26" fill={i === 0 ? ORANGE : "none"} stroke={INK} strokeWidth="1.25" />
+          <text x={24 + i * 105 + 46} y="241" textAnchor="middle" fontFamily="ui-monospace" fontSize="9" letterSpacing="1.5" fill={i === 0 ? CREAM : INK}>
+            {k}
+          </text>
+        </g>
+      ))}
+      {/* laptop base */}
+      <rect x="-30" y="300" width="520" height="14" fill={INK} />
+      {/* progress rail */}
+      <g transform="translate(0 348)">
+        <line x1="0" y1="0" x2="460" y2="0" stroke={INK} strokeWidth="1" />
+        {[0, 1, 2, 3, 4].map((i) => (
+          <circle key={i} cx={i * 115} cy="0" r="6" fill={i < 3 ? ORANGE : "none"} stroke={INK} strokeWidth="1.25" />
+        ))}
+      </g>
+    </g>
+    <text x="170" y="528" fontFamily="ui-monospace" fontSize="12" letterSpacing="4" fill={INK_60}>
+      AFTER-SCHOOL · 1:1
+    </text>
+    <line x1="170" y1="538" x2="630" y2="538" stroke={INK} strokeWidth="1" />
+    <text x="170" y="558" fontFamily="ui-monospace" fontSize="11" letterSpacing="3" fill={ORANGE}>
+      AI TUTOR + VERIFIED EXPERTS
+    </text>
+  </Frame>
+);
+
 const registry = {
   "academic-excellence": Academic,
   "review-accountability": Review,
@@ -378,6 +430,7 @@ const registry = {
   "eduops-academy": Academy,
   "transformation-services": Transformation,
   "corporate-services": Corporate,
+  "online-coaching": Online,
 };
 
 export const PillarIllustration = ({ slug, className }) => {

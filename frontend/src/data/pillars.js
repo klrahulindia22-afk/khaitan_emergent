@@ -627,6 +627,68 @@ export const pillars = [
     footnote:
       "The group office your school never had — designed to return Promoter bandwidth to strategy.",
   },
+  {
+    slug: "online-coaching",
+    number: "08",
+    title: "Online Coaching & Personalised Learning",
+    formalName: "Personalised After-School Learning Platform",
+    tag: "Learning",
+    summary:
+      "A personalised after-school learning platform — a Personal AI Tutor plus verified Private Tutors — that closes the exact learning gaps identified in the PTM report.",
+    description:
+      "The learning gap does not end when the chapter ends. As the school moves to the next chapter, this pillar turns the PTM report into personalised after-school support — until the child can understand, explain and apply the concept independently.",
+    outcomes: [
+      {
+        title: "Focused Support",
+        body: "The child gets help with the exact difficulty identified in the PTM report — without repeating the entire chapter.",
+        footer:
+          "Every learning journey begins with the child's actual difficulty and continues until they can understand, explain and apply the concept independently.",
+      },
+      {
+        title: "Better Understanding",
+        body: "Different explanations and guided practice help the child understand and apply the concept — in English, Hindi or bilingual.",
+        bullets: [
+          "Stories and comics",
+          "Pictures and visual examples",
+          "Sports and games",
+          "Music and rhythm",
+          "Everyday situations",
+          "Nature, history and science",
+          "Practical activities at home",
+        ],
+        footer:
+          "The child can ask questions without hesitation and request another explanation whenever something is unclear.",
+      },
+      {
+        title: "Clear Direction for Parents",
+        body: "Parents know what needs attention, what support is being provided and what has improved — no guesswork about how to explain a concept, which method will help, or when additional help is required.",
+      },
+      {
+        title: "Progress That Updates Itself",
+        body: "Short, interactive understanding checks confirm whether the child can apply the concept independently — and results automatically update the learning journey.",
+        footer:
+          "Parents see what has improved, what needs practice and what comes next.",
+      },
+    ],
+    image:
+      "https://images.unsplash.com/photo-1597933471507-1ca5765185d8?q=80&w=1600&auto=format&fit=crop",
+    accent: "ink",
+    componentsLabel: "Two Modules · One Learning Goal",
+    components: [
+      {
+        code: "A",
+        title: "Personal AI Tutor",
+        body: "A subscription-based AI tutor that teaches only the concepts identified by the school at PTM — through stories, pictures, sports, music, everyday situations and practical home activities. Ends with a short interactive understanding check.",
+      },
+      {
+        code: "B",
+        title: "Private Tutor",
+        body: "A verified subject expert, booked hourly for a specific learning gap. The tutor receives a learning brief — the concept, what the child already understands, where they struggle and which methods have been tried. Parents choose by subject, grade, language, mode, availability, experience and fee.",
+      },
+    ],
+    footnote:
+      "Learning gaps connect automatically from the PTM report — parents never upload or enter anything. Tutor sessions are booked hourly, and the tutor's fee is separate from the platform subscription.",
+  },
 ];
 
 export const marqueeItems = [
